@@ -4,8 +4,8 @@ import InnerLayout from "@/components/layout/InnerLayout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Revel Contact Page",
-  description: "Developed by Azizur Rahman",
+  title: "NJC-National Judicial Council",
+  description: "National Judicial Council",
 };
 export default function Home() {
   return (
