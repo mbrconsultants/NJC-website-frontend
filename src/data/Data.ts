@@ -1117,82 +1117,56 @@ const accordionData = [
 const blogData4 = [
   {
     id: 1,
-    img: "/assets/img/rv-1-blog-1.jpg",
-    date: "June 15, 2023",
+    img: "/assets/img/njcNewLogo.jpg",
+    date: "Wed, 29th May, 2024",
     comments: 5,
-    title: "Emphasizing Building Stronger Communities",
-    slug: "community-building.",
+    title: "CONFLICTING ORDERS 1",
+    slug: "CONFLICTING ORDERS 1"
   },
   {
     id: 2,
-    img: "/assets/img/rv-1-blog-2.jpg",
-    date: "July 20, 2023",
-    comments: 12,
-    title: "Rank Website Higher: Master SEO 101",
-    slug: "seo-101-rank-higher",
-    big: true,
+    img: "/assets/img/njcNewLogo.jpg",
+    date: "Wed, 29th May, 2024",
+    comments: 5,
+    title: "CONFLICTING ORDERS 2",
+    slug: "CONFLICTING ORDERS 2"
   },
   {
     id: 3,
-    img: "/assets/img/rv-1-blog-3.jpg",
-    date: "August 1, 2023",
-    comments: 8,
-    title: "Content Marketing Secrets: Attract & Retain",
-    slug: "content-secrets-attract-retain",
-    small: true,
+    img: "/assets/img/njcNewLogo.jpg",
+    date: "Wed, 29th May, 2024",
+    comments: 5,
+    title: "CONFLICTING ORDERS 3",
+    slug: "CONFLICTING ORDERS 3"
   },
   {
     id: 4,
-    img: "/assets/img/rv-1-blog-4.jpg",
-    date: "September 10, 2023",
-    comments: 3,
-    title: "Bust Creative Slumps: Find Your Flow",
-    slug: "bust-creative-slumps",
-    big: true,
+    img: "/assets/img/njcNewLogo.jpg",
+    date: "Wed, 29th May, 2024",
+    comments: 5,
+    title: "CONFLICTING ORDERS 4",
+    slug: "CONFLICTING ORDERS 4"
   },
   {
     id: 5,
-    img: "/assets/img/rv-1-blog-5.jpg",
-    date: "October 5, 2023",
-    comments: 15,
-    title: "Social Media Brand Power: Build & Thrive",
-    slug: "personal-brand-social-media",
-    small: true,
+    img: "/assets/img/njcNewLogo.jpg",
+    date: "Wed, 29th May, 2024",
+    comments: 5,
+    title: "CONFLICTING ORDERS 5 ",
+    slug: "CONFLICTING ORDERS 5"
   },
   {
     id: 6,
-    img: "/assets/img/rv-1-blog-6.jpg",
-    date: "November 1, 2023",
-    comments: 7,
-    title: "5 Email Marketing Insights: Boost Engagement",
-    slug: "5-email-marketing-insights",
+    img: "/assets/img/njcNewLogo.jpg",
+    date: "Wed, 29th May, 2024",
+    comments: 5,
+    title: "CONFLICTING ORDERS 6",
+    slug: "CONFLICTING ORDERS 6"
   },
-  {
-    id: 7,
-    img: "/assets/img/rv-1-blog-7.jpg",
-    date: "December 15, 2023",
-    comments: 20,
-    title: "Entrepreneur Productivity Hacks: Get Things Done",
-    slug: "entrepreneur-productivity",
-    small: true,
-  },
-  {
-    id: 8,
-    img: "/assets/img/rv-1-blog-8.jpg",
-    date: "January 10, 2024",
-    comments: 10,
-    title: "Master Collaboration: Work Smarter Together",
-    slug: "master-collaboration-work",
-  },
-  {
-    id: 9,
-    img: "/assets/img/rv-1-blog-9.jpg",
-    date: "February 2, 2024",
-    comments: 4,
-    title: "Future-Proof Your Business: Trends for Success",
-    slug: "future-proof-business-trends",
-    big: true,
-  },
+ 
+
+
+ 
 ];
 
 const galleryData3 = [
