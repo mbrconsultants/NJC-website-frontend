@@ -42,7 +42,7 @@ const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge }) => {
             >
               <SwiperSlide className="rv-18-single_testimonial swiper-slide">
                 <div className="rv-18-single_testimonial_image">
-                  <img src={`${process.env.REACT_APP_BACKEND_URL +chiefJudge.photo}`} alt="image" />
+                  <img src={`${process.env.NEXT_PUBLIC_UPLOAD_URL +chiefJudge.photo}`} alt="image" />
                 </div>
                 <div className="rv-18-single_testimonial_content">
                   <div className="rv-18-single_testimonial_rating">

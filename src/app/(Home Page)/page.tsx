@@ -14,7 +14,7 @@ import CompareSection from "@/components/compare/CompareSection";
 import ContactSection4 from "@/components/contact/ContactSection4";
 import BlogSection6 from "@/components/blog/BlogSection6";
 import FooterSection4 from "@/components/footer/FooterSection4";
-import AboutSection5 from "@/components/about/AboutSection5";
+import AboutSection5 from "@/webComponents/about/AboutSection5";
 import endpoint from "../../context/endpoint"
 
 // export const metadata: Metadata = {
