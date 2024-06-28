@@ -1,0 +1,11 @@
+.justify-text-container {
+  text-align: justify;
+  width: 100%;
+  margin: auto;
+  max-width: 100%;
+}
+
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
