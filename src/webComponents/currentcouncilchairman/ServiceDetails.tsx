@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useContext, useEffect } from "react";
 import AccordionSection from "../accordion/AccordionSection";
 import ImgAnimateLeftToRight from "../utils/ImgAnimateLeftToRight";
 import ServiceSearchbar from "./ServiceSearchbar";
@@ -7,10 +9,34 @@ import ServiceDetailsQuote from "./ServiceDetailsQuote";
 import ServiceDetailCard from "./ServiceDetailCard";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import BlogRecentSection from "./BlogRecentSection";
+import axios from "axios";
+
 type Props = {
   img: string;
   title: string;
 };
+
+const handleGetChiefJustice = async () => {
+  try {
+    const data = {
+      // payload
+    };
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/chiefjustice`,
+      data
+    );
+    // SuccessAlert(response.data.message);
+  } catch (err) {
+    console.log(err);
+    // setLoading(false);
+    // if (err.response && err.response.data && err.response.data.description) {
+    //   ErrorAlert(err.response.data.description);
+    // } else {
+    //   ErrorAlert("An error occurred. Please try again.");
+    // }
+  }
+};
+
 const ServiceDetails = ({ img, title }: Props) => {
   interface ImgAnimateLeftToRightProps {
     src: string;
@@ -23,6 +49,10 @@ const ServiceDetails = ({ img, title }: Props) => {
     alt,
     style,
   }) => <img src={src} alt={alt} style={style} />;
+
+  useEffect(() => {
+    handleGetChiefJustice();
+  }, []);
 
   return (
     <section className="rv-service-details rv-section-spacing">
