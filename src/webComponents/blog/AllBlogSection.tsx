@@ -30,11 +30,11 @@ const AllBlogSection = () => {
                   </li>
                 </ul>
                 <h4 className="rv-1-blog__title">
-                  <Link href={`/news-events/${item.title}`}>{item.title}.</Link>
+                  <Link href={`/news-events/${item.id}`}>{item.title}.</Link>
                 </h4>
 
                 <Link
-                  href={`/news-events/${item.title}`}
+                  href={`/news-events/${item.id}`}
                   className="rv-1-schedule-conf__btn rv-1-blog__btn"
                 >
                   Read More <i className="fa-light fa-arrow-right"></i>
