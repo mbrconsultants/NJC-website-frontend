@@ -3,10 +3,20 @@ import React from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+interface ChiefJudgeProps {
+  chiefJudge: {
+    id: number;
+    caption: string;
+    profileID: string;
+    photo: string;
+  };
+}
 
-const TestimonialSection5 = () => {
+const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge }) => {
+  
+  
   return (
-    <section className="rv-18-testimonial_section">
+    <section className="rv-18-testimonial_section" style={{backgroundColor:"white"}}>
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -32,7 +42,7 @@ const TestimonialSection5 = () => {
             >
               <SwiperSlide className="rv-18-single_testimonial swiper-slide">
                 <div className="rv-18-single_testimonial_image">
-                  <img src="assets/img/chairman9732547091716559972.jpg" alt="image" />
+                  <img src={`${process.env.REACT_APP_BACKEND_URL +chiefJudge.photo}`} alt="image" />
                 </div>
                 <div className="rv-18-single_testimonial_content">
                   <div className="rv-18-single_testimonial_rating">
@@ -49,7 +59,7 @@ const TestimonialSection5 = () => {
                   <div className="rv-18-single_testimonial_bottom">
                     <div className="rv-18-testimonial_author_meta">
                       <h3 className="rv-18-testimonial_author_name">
-                        <a href="#">HON. JUSTICE OLUKAYODE ARIWOOLA</a>
+                        <a href="#">{chiefJudge.caption}</a>
                       </h3>
                       <p className="rv-18-testimonial_author_designation">
                         Chief Justice of Nigeria
