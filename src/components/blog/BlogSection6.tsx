@@ -9,10 +9,10 @@ const BlogSection6 = () => {
         <div className="row">
           <div className="col-md-12">
             <h2 className="rv-18-blog_heading rv-text-anime">
-              Latest Post from Blog
-              <span className="position-absolute">
+              News and Events
+              {/* <span className="position-absolute">
                 <img src="assets/img/slider/home-4-banner-sh.png" alt="image" />
-              </span>
+              </span> */}
             </h2>
           </div>
         </div>

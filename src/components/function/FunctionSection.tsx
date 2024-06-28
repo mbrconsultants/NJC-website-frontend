@@ -72,8 +72,8 @@ const FunctionSection = () => {
                     <a href="#">{"RULES AND REGULATIONS"}</a>
                   </h6>
                 <span className="rv-8-function__sub-title">
-                  <li><i className="fa fa-certificate" aria-hidden="true"></i> Procedural Rules</li>
-                  <li><i className="fa fa-certificate" aria-hidden="true"></i> Code of Conduct</li>
+                  <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> Procedural Rules</li>
+                  <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> Code of Conduct</li>
                 
 
                   </span>
@@ -86,8 +86,8 @@ const FunctionSection = () => {
                     <a href="#">{"COMMITTEES IN NJC"}</a>
                   </h6>
                   <span className="rv-8-function__sub-title">
-                     <li><i className="fa fa-certificate" aria-hidden="true"></i>  Interview of Nominees for Appointment as Judicial Officers of Superior Courts of Record.</li>
-                  <li><i className="fa fa-certificate" aria-hidden="true"></i>  Review of The 1999 Constitution.</li>
+                     <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i>  Interview of Nominees for Appointment as Judicial Officers of Superior Courts of Record.</li>
+                  <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i>  Review of The 1999 Constitution.</li>
                   </span>
                 </div>
               </SwiperSlide>  <SwiperSlide className="rv-8-function" >
@@ -98,7 +98,7 @@ const FunctionSection = () => {
                   </h6>
                 <span className="rv-8-function__sub-title">
                   <li>
-                    <i className="fa fa-certificate" aria-hidden="true"></i> 
+                    <i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> 
                     {"Extant revised NJC Guidelines and Procedural rules for the appointment of Judicial Officers of all superior courts of record in Nigeria are as follows:"}
 
                   </li>
@@ -111,7 +111,7 @@ const FunctionSection = () => {
                     <a href="#">{"NATIONAL JUDICIAL POLICY"}</a>
                   </h6>
                 <span className="rv-8-function__sub-title">
-                    <i className="fa fa-certificate" aria-hidden="true"></i> 
+                    <i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> 
                   
                     {"The National Judicial Council is a body established under section 153(1) of the Constitution with power relating to appointments and exercise of displinary.."}
                   </span>
