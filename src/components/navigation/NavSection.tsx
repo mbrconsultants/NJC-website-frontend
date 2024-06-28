@@ -76,7 +76,7 @@ const NavSection = ({ style, logo }: Props) => {
               <Link href="/current-council-members">Current Council Members</Link>
             </li>
               <li>
-              <Link href="/management-staff">Management Staffs</Link>
+              <Link href="/management-staff">Management Staff</Link>
             </li>
           </ul>
         </li>

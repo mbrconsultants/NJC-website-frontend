@@ -12,7 +12,7 @@ const AccordionSection = () => {
 
   return (
     <DivAnimateYAxis className="rv-accordion">
-      <h3 className="rv-service-details__title">Frequently Asked Questions</h3>
+      {/* <h3 className="rv-service-details__title">Frequently Asked Questions</h3> */}
       {accordionData.map((item) => (
         <div
           key={item.id}
