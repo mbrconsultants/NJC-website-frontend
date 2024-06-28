@@ -35,7 +35,7 @@ const BlogDetailSection = ({ img, title, id }: Props) => {
 
               <BlogDetailDesc />
 
-              <BlogDetailBottomAction />
+              {/* <BlogDetailBottomAction /> */}
 
               <DivAnimateYAxis className="rv-blog-details-bottom__navs">
                 <div className="row gy-0 gx-0">
@@ -64,20 +64,20 @@ const BlogDetailSection = ({ img, title, id }: Props) => {
                 </div>
               </DivAnimateYAxis>
 
-              <BlogDetailCommentArea />
+              {/* <BlogDetailCommentArea /> */}
 
-              <BlogDetailCommentFormArea />
+              {/* <BlogDetailCommentFormArea /> */}
             </div>
           </div>
 
           <div className="col-lg-4 col-md-8 col-10 col-xxs-12">
             <BlogSearchbar />
 
-            <BlogCategory />
+            {/* <BlogCategory /> */}
 
             <BlogRecentSection />
 
-            <BlogTagSection />
+            {/* <BlogTagSection /> */}
           </div>
         </div>
       </div>

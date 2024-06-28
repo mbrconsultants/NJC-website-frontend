@@ -1,23 +1,35 @@
-"use client";
-import { bannerData4 } from "@/data/Data";
-import gsap from "gsap";
-import React, { useEffect, useState } from "react";
-import SplitType from "split-type";
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, Thumbs } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import SplitType from 'split-type';
+import gsap from 'gsap';
+import 'swiper/swiper-bundle.css';
 
-const BannerSection8 = () => {
+interface SliderItem {
+  id: number;
+  title: string;
+  desc: string;
+  photo: string;
+  bottomImg: string;
+  style: string;
+}
+
+interface BannerSection8Props {
+  mainSlider: SliderItem[];
+}
+
+const BannerSection8: React.FC<BannerSection8Props> = ({ mainSlider }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const [swiper, setSwiper] = useState<any>(null);
 
   useEffect(() => {
     if (swiper) {
-      swiper.on("slideChange", () => {
+      swiper.on('slideChange', () => {
         const currentSlide = swiper.slides[swiper.activeIndex];
-        const textsToAnimate = currentSlide.querySelectorAll(".rv-text-anime");
+        const textsToAnimate = currentSlide.querySelectorAll('.rv-text-anime');
         textsToAnimate.forEach((textToAnimate: HTMLElement) => {
           const animate = new SplitType(textToAnimate, {
-            types: "words,chars",
+            types: 'words,chars',
           });
           gsap.from(animate.chars, {
             opacity: 0,
@@ -29,6 +41,7 @@ const BannerSection8 = () => {
       });
     }
   }, [swiper]);
+
   return (
     <section className="rv-18-banner_main_area position-relative">
       <Swiper
@@ -38,34 +51,29 @@ const BannerSection8 = () => {
         slidesPerView={1}
         loop={true}
         pagination={{
-          el: ".rv-18-banner-swiper-pagination",
-          renderBullet: function (index, className) {
-            return (
-              '<span class="' + className + '">' + "0" + (index + 1) + "</span>"
-            );
-          },
+          el: '.rv-18-banner-swiper-pagination',
+          renderBullet: (index, className) => `<span class="${className}">0${index + 1}</span>`,
         }}
         navigation={{
-          nextEl: ".rv-18-banner_slider_next",
+          nextEl: '.rv-18-banner_slider_next',
         }}
         thumbs={{
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
         }}
         modules={[Pagination, Navigation, Thumbs, Autoplay]}
-        onSwiper={(swiper) => setSwiper(swiper)}
+        onSwiper={setSwiper}
       >
-        {bannerData4.map((item) => (
-          <SwiperSlide
-            className={`rv-18-banner_single_slider ${item.style}`}
-            key={item.id}
-          >
+        {mainSlider.map((item) => (
+         
+          <SwiperSlide className={`rv-18-banner_single_slider car_wash_2`} key={item.id}>
             <div className="container">
               <div className="row">
                 <div className="col-md-8">
                   <h1 className="rv-text-anime">
+                    {/* {`http://127.0.0.1:8000${item.photo}`} */}
                     {item.title}
                     <span className="position-absolute">
-                      <img src={item.img} alt="image" />
+                      <img src={`http://127.0.0.1:8000${item.photo}`} alt="image" />
                     </span>
                   </h1>
                   <p>{item.desc}</p>
@@ -91,14 +99,11 @@ const BannerSection8 = () => {
           freeMode={true}
           loop={true}
           watchSlidesProgress={true}
-          onSwiper={(swiper) => setThumbsSwiper(swiper)}
+          onSwiper={setThumbsSwiper}
         >
-          {bannerData4.map((item) => (
-            <SwiperSlide
-              className="rv-18-banner_slider_bottom_image"
-              key={item.id}
-            >
-              <img src={item.bottomImg} alt="image" />
+          {mainSlider.map((item) => (
+            <SwiperSlide className="rv-18-banner_slider_bottom_image" key={item.id}>
+              <img src={`http://127.0.0.1:8000${item.photo}`} alt="image" />
             </SwiperSlide>
           ))}
         </Swiper>
