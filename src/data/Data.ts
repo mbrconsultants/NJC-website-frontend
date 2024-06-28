@@ -2,6 +2,7 @@ import Icon from "@/components/utils/svg/Icon";
 import Icon2 from "@/components/utils/svg/Icon2";
 import Icon3 from "@/components/utils/svg/Icon3";
 import Icon4 from "@/components/utils/svg/Icon4";
+import { slugify } from '../lib/slugify';
 
 const speakersData = [
   {
@@ -1122,7 +1123,7 @@ const blogData4 = [
     date: "Wed, 29th May, 2024",
     comments: 5,
     title: "CONFLICTING ORDERS 1",
-    slug: "CONFLICTING ORDERS 1"
+    slug: slugify('CONFLICTING ORDERS 1')
   },
   {
     id: 2,

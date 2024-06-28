@@ -1,107 +1,65 @@
 "use client";
-import { bannerData4 } from "@/data/Data";
-import gsap from "gsap";
-import React, { useEffect, useState } from "react";
-import SplitType from "split-type";
-import { Autoplay, Navigation, Pagination, Thumbs } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
-const BannerSection8 = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-  const [swiper, setSwiper] = useState<any>(null);
+interface SliderItem {
+  id: number;
+  caption: string;
+  subcaption: string;
+  photo: string;
+}
 
-  useEffect(() => {
-    if (swiper) {
-      swiper.on("slideChange", () => {
-        const currentSlide = swiper.slides[swiper.activeIndex];
-        const textsToAnimate = currentSlide.querySelectorAll(".rv-text-anime");
-        textsToAnimate.forEach((textToAnimate: HTMLElement) => {
-          const animate = new SplitType(textToAnimate, {
-            types: "words,chars",
-          });
-          gsap.from(animate.chars, {
-            opacity: 0,
-            x: 100,
-            duration: 1.1,
-            stagger: { amount: 0.9 },
-          });
-        });
-      });
-    }
-  }, [swiper]);
+interface BannerSection8Props {
+  mainSlider: SliderItem[];
+}
+
+const BannerSection8: React.FC<BannerSection8Props> = ({ mainSlider }) => {
+ 
+  
   return (
-    <section className="rv-18-banner_main_area position-relative">
-      <Swiper
-        className="rv-18-banner_slider"
-        spaceBetween={10}
-        autoplay={true}
-        slidesPerView={1}
-        loop={true}
-        pagination={{
-          el: ".rv-18-banner-swiper-pagination",
-          renderBullet: function (index, className) {
-            return (
-              '<span class="' + className + '">' + "0" + (index + 1) + "</span>"
-            );
-          },
-        }}
-        navigation={{
-          nextEl: ".rv-18-banner_slider_next",
-        }}
-        thumbs={{
-          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-        }}
-        modules={[Pagination, Navigation, Thumbs, Autoplay]}
-        onSwiper={(swiper) => setSwiper(swiper)}
-      >
-        {bannerData4.map((item) => (
-          <SwiperSlide
-            className={`rv-18-banner_single_slider ${item.style}`}
-            key={item.id}
-          >
-            <div className="container">
-              <div className="row">
-                <div className="col-md-8">
-                  <h1 className="rv-text-anime">
-                    {item.title}
-                    <span className="position-absolute">
-                      <img src={item.img} alt="image" />
-                    </span>
-                  </h1>
-                  <p>{item.desc}</p>
-                  <a href="#" className="rv-18-banner_content_btn">
-                    Request Quote <i className="fal fa-arrow-right"></i>
-                  </a>
-                </div>
+    <section className="rv-18-banner_main_area position-relative mx-1 px-1 mb-2">
+      <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-indicators">
+          {mainSlider.map((item, index) => (
+            <button
+              key={index + 1}
+              type="button"
+              data-bs-target="#bannerCarousel"
+              data-bs-slide-to={index}
+              className={index === 0 ? "active" : ""}
+              aria-current={index === 0 ? "true" : "false"}
+              aria-label={`Slide ${index + 1}`}
+            ></button>
+          ))}
+        </div>
+        <div className="carousel-inner">
+          {mainSlider.map((item, index) => (
+            <div
+              key={index + 1}
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+              style={{ 
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_UPLOAD_URL + item.photo})`, 
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center', 
+                height: "550px" 
+              }}
+            >
+              <div className="carousel-caption d-md-block">
+                <h2 className="text-white">{item.caption}</h2>
+                <p className="text-white">{item.subcaption}</p>
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div className="rv-18-banner-bottom-section">
-        <div className="rv-18-banner_slider_next">
-          <div className="rv-18-banner-swiper-pagination"></div>
-          <p>Luxury Vehicle Grooming Solutions.</p>
-          <i className="fas fa-long-arrow-right"></i>
-        </div>
-        <Swiper
-          className="rv-18-banner_slider_bottom_area"
-          spaceBetween={10}
-          slidesPerView={1}
-          freeMode={true}
-          loop={true}
-          watchSlidesProgress={true}
-          onSwiper={(swiper) => setThumbsSwiper(swiper)}
-        >
-          {bannerData4.map((item) => (
-            <SwiperSlide
-              className="rv-18-banner_slider_bottom_image"
-              key={item.id}
-            >
-              <img src={item.bottomImg} alt="image" />
-            </SwiperSlide>
           ))}
-        </Swiper>
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
     </section>
   );

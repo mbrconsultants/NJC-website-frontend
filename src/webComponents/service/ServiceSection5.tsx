@@ -1,7 +1,17 @@
 import React from "react";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+interface ServicesProps {
+  mission: {
+    id: number;
+    msg: string;
+  };
+      vission: {
+    id: number;
+    msg: string;
+  };
 
-const ServiceSection5 = () => {
+}
+const ServiceSection5: React.FC<ServicesProps>   = ({mission, vission }) => {
   return (
     <section className="rv-8-services pt-120 pb-60">
       <div className="container">
@@ -45,7 +55,7 @@ const ServiceSection5 = () => {
                   <a href="#">  MISSION</a>
                 </h4>
                 <p className="rv-3-service__descr">
-                  For efficient and effective administration of justice in Nigeria.
+                 {mission.msg}
                 </p>
                 <a
                   href="/about"
@@ -68,7 +78,7 @@ const ServiceSection5 = () => {
                   <a href="#">VISION</a>
                 </h4>
                 <p className="rv-3-service__descr">
-                A Judiciary that is integrity-driven with adequate measures to enhance timely and equitable dispensation of justice in Nigeria.
+               {vission.msg}
                 </p>
                 <a
                   href="/about"

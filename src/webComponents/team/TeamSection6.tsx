@@ -5,12 +5,22 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
+interface CouncilMember {
+  id: number;
+  designation: string;
+  fullname: string;
+  picture: string;
+  position: string;
+  rank: number;
+}
 
 interface TeamSection6Props {
   data: string;
+  councilMember: CouncilMember[]
 }
 
-const TeamSection6: React.FC<TeamSection6Props> = ({ data }) => {
+const TeamSection6: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
+    
   return (
     <section className="rv-18-teem_main_area_section">
       <div className="container">
@@ -21,10 +31,10 @@ const TeamSection6: React.FC<TeamSection6Props> = ({ data }) => {
               <h2 className="rv-18-testimonial_heading rv-text-anime">
                {data}
                 <span className="position-absolute">
-                  <img
+                  {/* <img
                     src="assets/img/slider/home-4-banner-sh.png"
                     alt="image"
-                  />
+                  /> */}
                 </span>
               </h2>
             </div>
@@ -68,16 +78,13 @@ const TeamSection6: React.FC<TeamSection6Props> = ({ data }) => {
               keyboard={true}
               modules={[Navigation]}
             >
-              {teamData6.map((item) => (
+              {councilMember && councilMember.map((item) => (
                 <SwiperSlide className="rv-18-single_teem" key={item.id}>
                   <div className="rv-18-single_teem_image">
-                    <img src={item.img} alt="image" />
+                    <img src={`${process.env.NEXT_PUBLIC_UPLOAD_URL +item.picture}`} alt="image" />
                     <div className="rv-18-teem_member_socials">
-                      {item.socials.map((social, index) => (
-                        <a href={social.urL} key={index}>
-                          <i className={social.icon}></i>
-                        </a>
-                      ))}
+                      <p className="text-white text-wrap h-5 w-10">{ item.position}</p>
+                     
                     </div>
                   </div>
                   <div className="rv-18-teem_member_info">
@@ -85,7 +92,7 @@ const TeamSection6: React.FC<TeamSection6Props> = ({ data }) => {
                       {item.designation}
                     </span>
                     <h4 className="rv-18-team_member_name">
-                      <a href="#">{item.name}</a>
+                      <a href="#">{item.fullname}</a>
                     </h4>
                   </div>
                 </SwiperSlide>

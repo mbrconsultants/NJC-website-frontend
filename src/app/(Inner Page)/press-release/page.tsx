@@ -9,14 +9,16 @@ export const metadata: Metadata = {
   title: "NJC recent news and event",
   description: "NJC recent news and event",
 };
-export default function Home({ params }: { params: { slug: string } }) {
-  const blogInfo = blogData4.find((item) => item.slug === params.slug);
+export default function Home({ params }: { params: { id: Number } }) {
+  
+  const blogInfo = blogData4.find((item) => item.id == 1);
   return (
     <main className="rv-14-home">
       <InnerLayout>
+       
         {blogInfo ? (
           <>
-            <BreadcrumbSection title="Blog Details" />
+            <BreadcrumbSection title=" News Details" />
             <BlogDetailSection
               img={blogInfo.img}
               title={blogInfo.title}
