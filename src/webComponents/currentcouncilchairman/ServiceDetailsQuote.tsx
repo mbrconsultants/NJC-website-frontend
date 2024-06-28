@@ -1,10 +1,30 @@
 "use client";
 
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useState, useEffect } from "react";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import "./ServiceDetailsQuote.css";
+import endpoint from "@/context/endpoint";
 
 const ServiceDetailsQuote = () => {
+  const [data, setData] = useState<any>({});
+
+  const handleGetChiefJustice = async () => {
+    // setLoading(true);
+    await endpoint
+      .get(`/chiefjustice`)
+      .then(({ data }) => {
+        console.log("chief", data.data.profilePhoto);
+        setData(data.data ? data.data.profilePhoto : "");
+        // setLoading(false);
+      })
+      .catch((err: any) => console.log(err));
+  };
+  console.log(data, "results");
+
+  useEffect(() => {
+    handleGetChiefJustice();
+  }, []);
+
   // const styles = {
   //   h6: {
   //     position: "relative" as "relative",
@@ -55,7 +75,7 @@ const ServiceDetailsQuote = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          HON. JUSTICE OLUKAYODE ARIWOOLA
+          {data.caption}
         </h6>
       </div>
       {/* <h6 className="fancy-element">HON. JUSTICE OLUKAYODE ARIWOOLA</h6> */}

@@ -18,7 +18,7 @@ export default function Home() {
     <main className="rv-14-body service-inner-page">
       <InnerLayout>
         <BreadcrumbSection title="Council Chairman" />
-        <ServiceDetails img={""} title={""} />
+        <ServiceDetails title={""} />
         {/* <ServiceSection2 /> */}
         {/* <CtaSection inner /> */}
       </InnerLayout>
