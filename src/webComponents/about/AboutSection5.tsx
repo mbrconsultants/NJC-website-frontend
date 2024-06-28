@@ -34,9 +34,9 @@ const AboutSection5 = () => {
             
 
               <h2 className="rv-8-section__title rv-text-anime">
-               Website 
+               Website
                 <span className="styled">
-                 Statistics
+                  Statistics
                   <svg
                     width="191"
                     height="20"
@@ -67,7 +67,7 @@ const AboutSection5 = () => {
                     </span>
                     +
                   </h4>
-                  <h6 className="rv-8-about-stat__name">Satisfied Customers</h6>
+                  <h6 className="rv-8-about-stat__name">Yearly Visitor</h6>
                 </div>
                 <div className="rv-8-about-stat">
                   <h4 className="rv-8-about-stat__number">
@@ -76,16 +76,27 @@ const AboutSection5 = () => {
                     </span>
                     +
                   </h4>
-                  <h6 className="rv-8-about-stat__name">Building Cleaned</h6>
+                  <h6 className="rv-8-about-stat__name">Monthly Visitor</h6>
                 </div>
                 <div className="rv-8-about-stat">
+                  <h6 className="rv-8-about-stat__number">
+                    <span>
+                      <NumberCounter number={69} durationToComplete={3} />
+                    </span>
+                    +
+                  </h6>
+                    <h6 className="rv-8-about-stat__name">Weekly Visitor</h6>
+
+                </div>
+                  <div className="rv-8-about-stat">
                   <h4 className="rv-8-about-stat__number">
                     <span>
                       <NumberCounter number={69} durationToComplete={3} />
                     </span>
                     +
                   </h4>
-                  <h6 className="rv-8-about-stat__name">Clever Employees</h6>
+                    <h6 className="rv-8-about-stat__name">Daily Visitor</h6>
+
                 </div>
               </div>
 

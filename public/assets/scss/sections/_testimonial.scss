@@ -1582,7 +1582,8 @@
 
 // INDEX-18 TESTIMONIAL
 .rv-18-testimonial_section {
-    background-image: url(../../img/testimonial/home-4-testimonial-bg.png);
+    // background-image: url(../../img/testimonial/home-4-testimonial-bg.png);
+    background-color: #00A659;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -1603,7 +1604,7 @@
         content: '';
         height: 100%;
         width: 100%;
-        background: rgba(20, 33, 55, 0.7);
+        background: #00A659;
         top: 0;
         left: 0;
         z-index: -1;
