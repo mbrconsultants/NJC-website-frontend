@@ -31,10 +31,10 @@ const TeamSection6: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
               <h2 className="rv-18-testimonial_heading rv-text-anime">
                {data}
                 <span className="position-absolute">
-                  <img
+                  {/* <img
                     src="assets/img/slider/home-4-banner-sh.png"
                     alt="image"
-                  />
+                  /> */}
                 </span>
               </h2>
             </div>
@@ -81,13 +81,10 @@ const TeamSection6: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
               {councilMember && councilMember.map((item) => (
                 <SwiperSlide className="rv-18-single_teem" key={item.id}>
                   <div className="rv-18-single_teem_image">
-                    <img src={`${process.env.REACT_APP_BACKEND_URL +item.picture}`} alt="image" />
+                    <img src={`${process.env.NEXT_PUBLIC_UPLOAD_URL +item.picture}`} alt="image" />
                     <div className="rv-18-teem_member_socials">
-                      {/* {item.socials.map((social, index) => (
-                        <a href={social.urL} key={index}>
-                          <i className={social.icon}></i>
-                        </a>
-                      ))} */}
+                      <p className="text-white text-wrap h-5 w-10">{ item.position}</p>
+                     
                     </div>
                   </div>
                   <div className="rv-18-teem_member_info">

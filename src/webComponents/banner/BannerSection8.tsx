@@ -39,7 +39,7 @@ const BannerSection8: React.FC<BannerSection8Props> = ({ mainSlider }) => {
               key={index + 1}
               className={`carousel-item ${index === 0 ? "active" : ""}`}
               style={{ 
-                backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL + item.photo})`, 
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_UPLOAD_URL + item.photo})`, 
                 backgroundSize: 'cover', 
                 backgroundPosition: 'center', 
                 height: "550px" 
