@@ -8,6 +8,7 @@ import "../../public/assets/scss/style.scss";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
+
 import Cursor from "@/components/utils/Cursor";
 import {
   inter,

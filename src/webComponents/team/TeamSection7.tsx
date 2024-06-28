@@ -7,19 +7,33 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
-const TeamSection7 = () => {
+interface CouncilMember {
+  id: number;
+  designation: string;
+  fullname: string;
+  picture: string;
+  position: string;
+  rank: number;
+}
+
+interface TeamSection6Props {
+  data: string;
+  councilMember: CouncilMember[]
+}
+
+const TeamSection7: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
   return (
     <section className="rv-22-teem_main_area_section">
       <div className="container">
         <div className="row">
           <div className="rv-22-teem_section_top">
             <div className="rv-22-teem_section_heading">
-              <h4 className="rv-22-teem_sub_title rv-text-anime">
-                Team Member<span className="rv8_sub_pre_nex"></span>
+              <h4 className="rv-22-teem_sub_title rv-text-anime" style={{color:"#008000"}}>
+               {data}<span className="rv8_sub_pre_nex"></span>
               </h4>
 
-              <h2 className="rv-22-teem_title rv-text-anime">
-                Masterful Touch From Complete Barber Team.
+              <h2 className="rv-22-teem_title rv-text-anime" style={{color:"#008000"}}>
+               {data}
               </h2>
             </div>
             <DivAnimateXAxis className="rv-22-teem_slide_button_area">
@@ -61,20 +75,20 @@ const TeamSection7 = () => {
             }}
             modules={[Navigation]}
           >
-            {teamData7.map((item) => (
+            {councilMember && councilMember.map((item) => (
               <SwiperSlide className="rv-22-single_teem" key={item.id}>
                 <div className="rv-22-single_teem_image">
-                  <img src={item.img} alt="image" />
+                  <img src={process.env.NEXT_PUBLIC_UPLOAD_URL +item.picture} alt="image" />
 
                   <div className="rv-22-single_teem_member_details">
-                    <span>{item.profession}</span>
-                    <h4>{item.name}</h4>
+                    <span>{item.designation}</span>
+                    <h4>{item.fullname}</h4>
                     <div className="rv-22-single_teem_member_socials">
-                      {item.socials.map((social, index) => (
+                      {/* {item.socials.map((social, index) => (
                         <Link href={social.url} key={index}>
                           <i className={social.icon}></i>
                         </Link>
-                      ))}
+                      ))} */}
                     </div>
                   </div>
                 </div>
