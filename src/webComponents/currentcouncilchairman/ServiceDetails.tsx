@@ -6,10 +6,11 @@ import ImgAnimateLeftToRight from "../utils/ImgAnimateLeftToRight";
 import ServiceSearchbar from "./ServiceSearchbar";
 import ServiceCategorySection from "./ServiceCategorySection";
 import ServiceDetailsQuote from "./ServiceDetailsQuote";
-import ServiceDetailCard from "./ServiceDetailCard";
+// import ServiceDetailCard from "./ServiceDetailCard";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import BlogRecentSection from "./BlogRecentSection";
 import endpoint from "@/context/endpoint";
+import "./ServiceDetails.css";
 
 type Props = {
   title: string;
@@ -69,7 +70,10 @@ const ServiceDetails = ({ title }: Props) => {
               <ServiceDetailsQuote />
 
               <DivAnimateYAxis>
-                <div dangerouslySetInnerHTML={{ __html: data.profiles }} />
+                <div
+                  className="justify-text-container justify-text"
+                  dangerouslySetInnerHTML={{ __html: data.profiles }}
+                />
               </DivAnimateYAxis>
 
               {/* <ServiceDetailCard /> */}
@@ -82,7 +86,7 @@ const ServiceDetails = ({ title }: Props) => {
             <BlogRecentSection />
             {/* <ServiceSearchbar /> */}
 
-            <ServiceCategorySection />
+            {/* <ServiceCategorySection /> */}
           </DivAnimateYAxis>
         </div>
       </div>
