@@ -6,7 +6,7 @@ import ImgAnimateLeftToRight from "../utils/ImgAnimateLeftToRight";
 import ServiceSearchbar from "./ServiceSearchbar";
 import ServiceCategorySection from "./ServiceCategorySection";
 import ServiceDetailsQuote from "./ServiceDetailsQuote";
-import ServiceDetailCard from "./ServiceDetailCard";
+// import ServiceDetailCard from "./ServiceDetailCard";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import BlogRecentSection from "./BlogRecentSection";
 import endpoint from "@/context/endpoint";
@@ -82,7 +82,7 @@ const ServiceDetails = ({ title }: Props) => {
             <BlogRecentSection />
             {/* <ServiceSearchbar /> */}
 
-            <ServiceCategorySection />
+            {/* <ServiceCategorySection /> */}
           </DivAnimateYAxis>
         </div>
       </div>

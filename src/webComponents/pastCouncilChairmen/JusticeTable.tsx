@@ -21,6 +21,8 @@ const JusticeTable: React.FC = () => {
       );
       const data = response.data.data;
 
+      console.log("Api Response", data);
+
       if (Array.isArray(data.getJustices)) {
         // Set the fetched data to the state
         setJustices(data.getJustices);
