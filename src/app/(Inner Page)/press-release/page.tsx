@@ -2,6 +2,8 @@ import BlogDetailSection from "@/webComponents/blog/BlogDetailSection";
 import BreadcrumbSection from "@/webComponents/breadcrumb/BreadcrumbSection";
 import ErrorSection from "@/webComponents/error/ErrorSection";
 import InnerLayout from "@/webComponents/layout/InnerLayout";
+import PressList from "@/webComponents/press/pressList";
+
 import { blogData4 } from "@/data/Data";
 import { Metadata } from "next";
 
@@ -18,12 +20,10 @@ export default function Home({ params }: { params: { id: Number } }) {
        
         {blogInfo ? (
           <>
-            <BreadcrumbSection title=" News Details" />
-            <BlogDetailSection
-              img={blogInfo.img}
-              title={blogInfo.title}
-              id={blogInfo.id}
-            />
+            <BreadcrumbSection title="Press Release" />
+            <div className="container">
+             <PressList />
+           </div>
           </>
         ) : (
           <ErrorSection />

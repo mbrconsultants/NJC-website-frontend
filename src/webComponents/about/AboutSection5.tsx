@@ -7,13 +7,10 @@ import { toggleVideoModalOpen } from "@/redux/features/videoModalSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
-
-
 interface SliderItem {
   id: number;
-  caption: string;
-  subcaption: string;
-  photo: string;
+  image_link: string;
+  image_description: string;
 }
 
 interface BannerSection8Props {
@@ -30,56 +27,45 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
       <div className="container">
         <DivAnimateYAxis position={40} className="row g-30 align-items-center">
           <div className="col-lg-6">
-        <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-indicators">
-          {mainSlider.map((item, index) => (
-            <button
-              key={index + 1}
-              type="button"
-              data-bs-target="#bannerCarousel"
-              data-bs-slide-to={index}
-              className={index === 0 ? "active" : ""}
-              aria-current={index === 0 ? "true" : "false"}
-              aria-label={`Slide ${index + 1}`}
-            ></button>
-          ))}
-        </div>
-        <div className="carousel-inner">
-          {mainSlider.map((item, index) => (
-            <div
-              key={index + 1}
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-              style={{ 
-                backgroundImage: `url(${process.env.NEXT_PUBLIC_UPLOAD_URL + item.photo})`, 
-                backgroundSize: 'cover', 
-                backgroundPosition: 'center', 
-                height: "550px" 
-              }}
-            >
-              <div className="carousel-caption d-md-block">
-                <h2 className="text-white">{item.caption}</h2>
-                <p className="text-white">{item.subcaption}</p>
+            <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div className="carousel-indicators">
+                {mainSlider.map((item, index) => (
+                  <button
+                    key={index + 1}
+                    type="button"
+                    data-bs-target="#bannerCarousel"
+                    data-bs-slide-to={index}
+                    className={index === 0 ? "active" : ""}
+                    aria-current={index === 0 ? "true" : "false"}
+                    aria-label={`Slide ${index + 1}`}
+                  ></button>
+                ))}
               </div>
+              <div className="carousel-inner">
+                {mainSlider.map((item, index) => (
+                  <img
+                    key={index}
+                    className={`carousel-item ${index === 0 ? "active" : ""}`}
+                    style={{ height: "600px" }}
+                    src={process.env.NEXT_PUBLIC_UPLOAD_URL + "/gallery/" + item.image_link}
+                  />
+                ))}
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
-          ))}
-        </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
           </div>
 
           <div className="col-lg-6">
             <div className="rv-8-about__txt">
-            
-
               <h2 className="rv-8-section__title rv-text-anime">
-               Website
+                Website
                 <span className="styled">
                   Statistics
                   <svg
@@ -97,14 +83,13 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
                     ></path>
                   </svg>
                 </span>
-              
               </h2>
 
               <p className="rv-8-about__descr">
-               The number of Website visitors
+                The number of Website visitors
               </p>
 
-             <div className="rv-8-about__stats d-flex justify-content-around align-items-center">
+              <div className="rv-8-about__stats d-flex justify-content-around align-items-center">
                 <div className="rv-8-about-stat text-center">
                   <h6 className="rv-8-about-stat__number">
                     <span>
