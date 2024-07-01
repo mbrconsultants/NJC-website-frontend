@@ -26,6 +26,8 @@ import endpoint from "../../context/endpoint"
 
 export default function Home() {
 const [data, setdata] = useState();
+const [gallery, setGallery] = useState([]);
+
 const [mainSlider, setMainSlider] = useState([]);
 const [chiefJudge, setChiefJudge] = useState<any>();
  const [mission, setMission] = useState<{ id: number; msg: string }>({
@@ -50,9 +52,6 @@ const [chiefJudge, setChiefJudge] = useState<any>();
   const homePageData = async () => {
     try {
       const res = await endpoint.get("/home-content");
-      console.log('====================================');
-      console.log( res.data.data);
-      console.log('====================================');
       setdata(res.data.data);
       setMainSlider(res.data.data.mainSlider);
       setChiefJudge(res.data.data.chiarmanPicture);
@@ -66,9 +65,22 @@ const [chiefJudge, setChiefJudge] = useState<any>();
       console.log(err);
   };
   }
+  
+  const getGalleryImages = async () => {
+    try {
+      const res = await endpoint.get("/gallery");
+      console.log('===============gallery=====================');
+      console.log(res.data.data.getGalleries);
+      console.log('====================================');
+      setGallery(res.data.data.getGalleries);
+    } catch (err) {
+      console.log(err);
+  };
+  }
 
   useEffect(() => {
     homePageData();
+    getGalleryImages();
   }, []);
   return (
     <main className="overflow-x-hidden car-wash-demo">
@@ -83,7 +95,7 @@ const [chiefJudge, setChiefJudge] = useState<any>();
       <TeamSection6 data={ "Management Staffs"} councilMember={managementStaffs}  /> */}
    <TeamSection7 data={ "Current Council Members"} councilMember={councilMember} />
       <TeamSection7 data={ "Management Staffs"} councilMember={managementStaffs}  />
-      <AboutSection5 mainSlider={ mainSlider}/>
+      <AboutSection5 mainSlider={ gallery}/>
 
 
       {/* <AboutSection6 /> */}

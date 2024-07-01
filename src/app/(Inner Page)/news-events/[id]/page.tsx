@@ -22,16 +22,9 @@ export default function Home({ params }: { params: { id: number } }) {
   const [allNews, setAllNews] = useState<Blog[]>([]);
 
 
-  console.log('====================================');
-  console.log(params);
-  console.log('====================================');
-
   const getData = async () => {
     try {
       const res = await endpoint.get(`/${params.id}/news-detail`);
-      console.log('================news====================');
-      console.log(res.data.data.news[0]);
-      console.log('====================================');
       setData(res.data.data.news[0]);
     } catch (err) {
       console.log(err);
@@ -40,10 +33,6 @@ export default function Home({ params }: { params: { id: number } }) {
    const getAllNews = async () => {
     try {
       const res = await endpoint.get("/news");
-      console.log('================news====================');
-      console.log(res.data.data.getNews);
-      console.log('====================================');
-
       if (Array.isArray(res.data.data.getNews)) {
         setAllNews(res.data.data.getNews);
       } else {

@@ -41,30 +41,29 @@ const BlogSection6: React.FC = () => {
     getData();
   }, []);
 
-  
-function formatDate(dateString: string) {
-  const date = new Date(dateString);
-  const day = date.getDate();
-  const month = date.toLocaleString('default', { month: 'long' });
-  const year = date.getFullYear();
-  
-  // Function to get the ordinal suffix for the day
-  const getOrdinalSuffix = (number: number) => {
-    if (number === 1 || number === 21 || number === 31) {
-      return "st";
-    } else if (number === 2 || number === 22) {
-      return "nd";
-    } else if (number === 3 || number === 23) {
-      return "rd";
-    } else {
-      return "th";
-    }
-  };
+  function formatDate(dateString: string) {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString("default", { month: "long" });
+    const year = date.getFullYear();
 
-  const ordinalSuffix = getOrdinalSuffix(day);
+    // Function to get the ordinal suffix for the day
+    const getOrdinalSuffix = (number: number) => {
+      if (number === 1 || number === 21 || number === 31) {
+        return "st";
+      } else if (number === 2 || number === 22) {
+        return "nd";
+      } else if (number === 3 || number === 23) {
+        return "rd";
+      } else {
+        return "th";
+      }
+    };
 
-  return `${day}${ordinalSuffix} ${month} ${year}`;
-}
+    const ordinalSuffix = getOrdinalSuffix(day);
+
+    return `${day}${ordinalSuffix} ${month} ${year}`;
+  }
 
   return (
     <section className="rv-18-blog_section">
@@ -85,7 +84,6 @@ function formatDate(dateString: string) {
                     src={item.img ? item.img : "/assets/images.png"}
                     alt="image"
                   />
-                 
                 </div>
                 <div className="rv-18-single_blog_content">
                   <div className="rv-18-single_blog_meta">
@@ -95,17 +93,17 @@ function formatDate(dateString: string) {
                     <p className="rv-18-single_blog_comment">
                       <i className="far fa-comments"></i>0 Comments
                     </p>
-                     <span className="rv-18-single_blog_date h-5 w-10">
-                    {formatDate(item.display_date)} 
-                  </span>
+                    <span className="rv-18-single_blog_date h-5 w-10">
+                      {formatDate(item.display_date)}
+                    </span>
                   </div>
                   <h4 className="rv-18-single_blog_content_title">
-                    <Link href={`/blog/${item.id}`}>
+                    <Link href={`/news-events/${item.id}`}>
                       {truncateTitle(item.title, 10)}
                     </Link>
                   </h4>
                   <Link
-                    href={`/blog/${item.id}`}
+                    href={`/news-events/${item.id}`}
                     className="rv-18-single_blog_btn"
                   >
                     Read More <i className="fas fa-arrow-right"></i>
