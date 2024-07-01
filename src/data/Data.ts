@@ -918,36 +918,42 @@ const teamData2 = [
     img: "/assets/img/rv-9-member-1.jpg",
     subTitle: "Team Leader",
     title: "Desmond Eagle",
+    slug: "",
   },
   {
     id: 2,
     img: "/assets/img/rv-9-member-2.jpg",
     subTitle: "Project Manager",
     title: "Sophia Griffin",
+    slug: "",
   },
   {
     id: 3,
     img: "/assets/img/rv-9-member-3.jpg",
     subTitle: "Design Specialist",
     title: "Liam Parker",
+    slug: "",
   },
   {
     id: 4,
     img: "/assets/img/rv-3-member-1.jpg",
     subTitle: "Marketing Coordinator",
     title: "Olivia Fisher",
+    slug: "",
   },
   {
     id: 5,
     img: "/assets/img/rv-3-member-2.jpg",
     subTitle: "Development Expert",
     title: "Ethan Turner",
+    slug: "",
   },
   {
     id: 6,
     img: "/assets/img/rv-3-member-3.jpg",
     subTitle: "Communications Officer",
     title: "Ava Hayes",
+    slug: "",
   },
 ];
 const teamData3 = [
@@ -1100,18 +1106,13 @@ const teamData4 = [
 const accordionData = [
   {
     id: 1,
-    title: "How many hours of lessons do you need to pass?",
-    desc: "Sed interdum ipsum fermentum, condimentum erat eget, egestas est. Etiam vel justo laoreet, efficitur lectus in, tincidunt magna. Aliquam eros lorem, rhoncus quis justo id.",
+    title: "WHAT IS NATIONAL JUDICIAL COUNCIL?",
+    desc: "The National Judicial Council is one of the Federal Executive Bodies created by virtue of Section 153 of the 1999 Constitution of the Federal Republic of Nigeria. In order to insulate the Judiciary from the whims and caprices of the Executive; hence guarantee the independence of this Arm of Government, which is a sine qua non for any Democratic Government, the National Judicial Council was created and vested with enormous powers and functions of the erstwhile Advisory Judicial Committee (AJC) which it replaced.",
   },
   {
     id: 2,
-    title: "How to Handle Tailgaters on the Road?",
-    desc: "Sed interdum ipsum fermentum, condimentum erat eget, egestas est. Etiam vel justo laoreet, efficitur lectus in, tincidunt magna. Aliquam eros lorem, rhoncus quis justo id.",
-  },
-  {
-    id: 3,
-    title: "How many driving lessons do I need before test?",
-    desc: "Sed interdum ipsum fermentum, condimentum erat eget, egestas est. Etiam vel justo laoreet, efficitur lectus in, tincidunt magna. Aliquam eros lorem, rhoncus quis justo id.",
+    title: "WHAT IS JUDICIAL EDUCATION AND TRAINING POLICY",
+    desc: "The main objective of the Judicial Education and Training Policy is capacity building and improvement of Judicial Officers for better performance of Administration of Justice, The National Judicial Policy proceeds on certain basic propositions Continuing Judicial Education and Training is indispensable to efficient and qualitative justice delivery Judicial Education must be holistic, practical and supported by essential tools, such as library and use of the latest Information Technology.",
   },
 ];
 
@@ -2344,6 +2345,7 @@ const serviceData6 = [
     ],
   },
 ];
+
 
 export {
   speakersData,
