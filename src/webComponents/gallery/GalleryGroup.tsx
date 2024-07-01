@@ -12,30 +12,25 @@ interface GalleryCoverImg {
   date_posted: string;
 }
 
-interface GalleryGroup {
-  groupID: number;
-  group_description: string;
-  created_at: string;
-  group_picture: number;
-  pictures_count: number;
-}
-
 interface GalleryItem {
   GalleryCoverImg: GalleryCoverImg;
-  galleryGroup: GalleryGroup;
 }
 
-const GallerySection4: React.FC = () => {
+interface GallerySectionProps {
+  params: { id: number };
+}
+
+const GallerySection4: React.FC<GallerySectionProps> = ({ params }) => {
   const [gallery, setGallery] = useState<GalleryItem[]>([]);
 
   const getData = async () => {
     try {
-      const res = await endpoint.get("/gallery");
-      console.log('====================================');
+      const res = await endpoint.get(`/gallery-details/${params.id}`);
+      console.log('===============group picture=====================');
       console.log(res.data.data);
       console.log('====================================');
-      if (Array.isArray(res.data.data.groupWithCoverImg)) {
-        setGallery(res.data.data.groupWithCoverImg);
+      if (Array.isArray(res.data.data.getAllgroupPicture)) {
+        setGallery(res.data.data.getAllgroupPicture.map((item: GalleryCoverImg) => ({ GalleryCoverImg: item })));
       } else {
         console.error("API response is not an array");
       }
@@ -46,7 +41,7 @@ const GallerySection4: React.FC = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [params.id]);
 
   const truncateTitle = (title: string, wordLimit: number) => {
     const words = title.split(" ");
@@ -76,7 +71,7 @@ const GallerySection4: React.FC = () => {
                         style={{ width: "100%", height: "200px", objectFit: "cover" }}
                       />
                     </a>
-                    <p className="mt-2">{truncateTitle(item.galleryGroup.group_description, 8)}</p>
+                    <p className="mt-2">{truncateTitle(item.GalleryCoverImg.image_description, 8)}</p>
                   </div>
                 </div>
               ))}

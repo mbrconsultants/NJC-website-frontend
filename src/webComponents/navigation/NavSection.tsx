@@ -121,16 +121,16 @@ const NavSection = ({ style, logo }: Props) => {
           </a>
           <ul className="sub-menu">
             <li>
-              <Link href="/blog">NJC Guidelines and Procedural Rules</Link>
+              <Link href="/njc-guidelines">NJC Guidelines and Procedural Rules</Link>
             </li>
             <li>
-              <Link href="#">Code of Conduct</Link>
+              <Link href="/code-of-conduct">Code of Conduct</Link>
             </li>
              <li>
-              <Link href="#">Discipline Regulation</Link>
+              <Link href="/discipline-regulations">Discipline Regulation</Link>
             </li>
               <li>
-              <Link href="#">NJC Policy</Link>
+              <Link href="national-judicial-policy">NJC Policy</Link>
             </li>
           </ul>
         </li>

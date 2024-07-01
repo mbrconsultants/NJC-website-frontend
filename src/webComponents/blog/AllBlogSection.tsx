@@ -91,10 +91,10 @@ function formatDate(dateString: string) {
                         <img src="/assets/img/rv-1-icon-4.png" alt="icon" />{" "}
                         {formatDate(item.display_date)}
                       </li>
-                      <li>
+                      {/* <li>
                         <img src="/assets/img/rv-1-icon-5.png" alt="icon" />{" "}
                         {item.comments} Comments
-                      </li>
+                      </li> */}
                     </ul>
                     <h5 className="card-title">
                       <Link href={`/news-events/${item.id}`}>
@@ -104,6 +104,7 @@ function formatDate(dateString: string) {
                     <Link
                       href={`/news-events/${item.id}`}
                       className="mt-auto btn btn-secondary"
+                      style ={{ backgroundColor: "#008000", borderColor: "#008000" }}
                     >
                       Read More <i className="fa-light fa-arrow-right"></i>
                     </Link>

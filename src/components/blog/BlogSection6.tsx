@@ -98,12 +98,12 @@ const BlogSection6: React.FC = () => {
                     </span>
                   </div>
                   <h4 className="rv-18-single_blog_content_title">
-                    <Link href={`/blog/${item.id}`}>
+                    <Link href={`/news-events/${item.id}`}>
                       {truncateTitle(item.title, 10)}
                     </Link>
                   </h4>
                   <Link
-                    href={`/blog/${item.id}`}
+                    href={`/news-events/${item.id}`}
                     className="rv-18-single_blog_btn"
                   >
                     Read More <i className="fas fa-arrow-right"></i>
