@@ -38,9 +38,9 @@ const ManagementStaffDetail = (params:{id:number},{ designation, picture, fullna
     }
   };
 
-  const stripHtmlTags = (str: any) => {
+  const stripHtmlTags = (str: string) => {
     if (!str) return "";
-    return str.replace(/<\/?[^>]+(>|$)/g, "");
+    return str.replace(/<\/?[^>]+(>|$)/g, "").replace(/&nbsp;/g, " ");
   };
 
   if (loading) return <div>Loading...</div>;

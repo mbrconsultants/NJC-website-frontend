@@ -53,10 +53,9 @@ const ManagementStaffSection = () => {
                     src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}${item.picture}`}
                     alt={`${item.fullname} picture`}
                     style={{
-                      width: '320px',
-                      // height: '350px',
-                      // objectFit: 'cover',
-                      // borderRadius: '50%'
+                      width: '450px',
+                      height: '380px',
+                      objectFit: 'contain'
                     }}
                   />
                 </div>
