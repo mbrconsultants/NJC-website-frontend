@@ -13,19 +13,16 @@ type DropdownState = {
   about_NJC: boolean;
   NJC_guidelines: boolean;
   media: boolean;
-
-
-
 };
 const NavSection = ({ style, logo }: Props) => {
   const [dropdown, setDropdown] = useState<DropdownState>({
     // home: false,
     judiciary: false,
     service: false,
-    about_NJC:false,
+    about_NJC: false,
     blog: false,
     NJC_guidelines: false,
-    media: false
+    media: false,
   });
 
   const handleToggleDropdown = (dropdownName: keyof DropdownState) => {
@@ -41,16 +38,16 @@ const NavSection = ({ style, logo }: Props) => {
     <div className={style}>
       <ul className="justify-content-center">
         <li >
-          <a href="/"
+          <Link
+            href="/"
             className="dropdown-btn"
-            role="button"
+           
           
           >
             Home
-          </a>
+          </Link>
         </li>
 
-      
         <li className={dropdown.about_NJC ? "rv-dropdown-active" : ""}>
           <a
             className="dropdown-btn text-xs"
@@ -90,14 +87,13 @@ const NavSection = ({ style, logo }: Props) => {
           </a>
           <ul className="sub-menu">
             <li>
-              <Link href="#">Current Council Chairman</Link>
-            </li>
-            <li>
-              <Link href="#">
-               Past Council Chairmen
+              <Link href="/current-council-chairman">
+                Current Council Chairman
               </Link>
             </li>
-           
+            <li>
+              <Link href="/past-council-chairmen">Past Council Chairmen</Link>
+            </li>
           </ul>
         </li>
         {logo && (
@@ -118,20 +114,22 @@ const NavSection = ({ style, logo }: Props) => {
           </a>
           <ul className="sub-menu">
             <li>
-              <Link href="/blog">NJC Guidelines and Procedural Rules</Link>
+              <Link href="/njc-guidelines">
+                NJC Guidelines and Procedural Rules
+              </Link>
             </li>
             <li>
-              <Link href="#">Code of Conduct</Link>
+              <Link href="/code-of-conduct">Code of Conduct</Link>
             </li>
-             <li>
-              <Link href="#">Discipline Regulation</Link>
+            <li>
+              <Link href="/discipline-regulations">Discipline Regulation</Link>
             </li>
-              <li>
-              <Link href="#">NJC Policy</Link>
+            <li>
+              <Link href="/national-judicial-policy">NJC Policy</Link>
             </li>
           </ul>
         </li>
-          <li className={dropdown.NJC_guidelines ? "rv-dropdown-active" : ""}>
+        <li className={dropdown.NJC_guidelines ? "rv-dropdown-active" : ""}>
           <a
             className="dropdown-btn"
             role="button"
@@ -146,15 +144,15 @@ const NavSection = ({ style, logo }: Props) => {
             <li>
               <Link href="/press-release">Press Release</Link>
             </li>
-             <li>
+            <li>
               <Link href="/gallery">Gallery</Link>
             </li>
-              <li>
+            <li>
               <Link href="/video-gallery">Video Gallery</Link>
             </li>
           </ul>
         </li>
-          <li>
+        <li>
           <Link href="/faq">FAQ</Link>
         </li>
 

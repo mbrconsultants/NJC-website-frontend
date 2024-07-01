@@ -4,8 +4,23 @@ import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import NumberCounter from "../utils/NumberCounter";
 import { useAppDispatch } from "@/redux/hooks";
 import { toggleVideoModalOpen } from "@/redux/features/videoModalSlice";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
-const AboutSection5 = () => {
+
+
+interface SliderItem {
+  id: number;
+  caption: string;
+  subcaption: string;
+  photo: string;
+}
+
+interface BannerSection8Props {
+  mainSlider: SliderItem[];
+}
+
+const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
   const dispatch = useAppDispatch();
   const openVideoModal = () => {
     dispatch(toggleVideoModalOpen());
@@ -15,18 +30,48 @@ const AboutSection5 = () => {
       <div className="container">
         <DivAnimateYAxis position={40} className="row g-30 align-items-center">
           <div className="col-lg-6">
-            <div className="rv-5-video rv-8-about__video text-center">
-              <span>
-                <a role="button" onClick={openVideoModal}>
-                  <i className="fa-solid fa-sharp fa-play"></i>
-                </a>
-              </span>
-              <img
-                src="assets/img/rv-8-about-vector-1.png"
-                alt="vector"
-                className="vector"
-              />
+        <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-indicators">
+          {mainSlider.map((item, index) => (
+            <button
+              key={index + 1}
+              type="button"
+              data-bs-target="#bannerCarousel"
+              data-bs-slide-to={index}
+              className={index === 0 ? "active" : ""}
+              aria-current={index === 0 ? "true" : "false"}
+              aria-label={`Slide ${index + 1}`}
+            ></button>
+          ))}
+        </div>
+        <div className="carousel-inner">
+          {mainSlider.map((item, index) => (
+            <div
+              key={index + 1}
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+              style={{ 
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_UPLOAD_URL + item.photo})`, 
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center', 
+                height: "550px" 
+              }}
+            >
+              <div className="carousel-caption d-md-block">
+                <h2 className="text-white">{item.caption}</h2>
+                <p className="text-white">{item.subcaption}</p>
+              </div>
             </div>
+          ))}
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
           </div>
 
           <div className="col-lg-6">
@@ -59,52 +104,46 @@ const AboutSection5 = () => {
                The number of Website visitors
               </p>
 
-              <div className="rv-8-about__stats d-flex">
-                <div className="rv-8-about-stat">
-                  <h4 className="rv-8-about-stat__number">
+             <div className="rv-8-about__stats d-flex justify-content-around align-items-center">
+                <div className="rv-8-about-stat text-center">
+                  <h6 className="rv-8-about-stat__number">
                     <span>
                       <NumberCounter number={200} durationToComplete={3} />
                     </span>
                     +
-                  </h4>
+                  </h6>
                   <h6 className="rv-8-about-stat__name">Yearly Visitor</h6>
                 </div>
-                <div className="rv-8-about-stat">
-                  <h4 className="rv-8-about-stat__number">
+                <div className="rv-8-about-stat text-center">
+                  <h6 className="rv-8-about-stat__number">
                     <span>
                       <NumberCounter number={87} durationToComplete={3} />
                     </span>
                     +
-                  </h4>
+                  </h6>
                   <h6 className="rv-8-about-stat__name">Monthly Visitor</h6>
                 </div>
-                <div className="rv-8-about-stat">
+                <div className="rv-8-about-stat text-center">
                   <h6 className="rv-8-about-stat__number">
                     <span>
                       <NumberCounter number={69} durationToComplete={3} />
                     </span>
                     +
                   </h6>
-                    <h6 className="rv-8-about-stat__name">Weekly Visitor</h6>
-
+                  <h6 className="rv-8-about-stat__name">Weekly Visitor</h6>
                 </div>
-                  <div className="rv-8-about-stat">
-                  <h4 className="rv-8-about-stat__number">
+                <div className="rv-8-about-stat text-center">
+                  <h6 className="rv-8-about-stat__number">
                     <span>
                       <NumberCounter number={69} durationToComplete={3} />
                     </span>
                     +
-                  </h4>
-                    <h6 className="rv-8-about-stat__name">Daily Visitor</h6>
-
+                  </h6>
+                  <h6 className="rv-8-about-stat__name">Daily Visitor</h6>
                 </div>
               </div>
 
-              <a href="#" className="rv-3-def-btn">
-                Learn More About Us
-              </a>
-
-              <div className="vectors">
+              {/* <div className="vectors">
                 <img
                   src="assets/img/rv-8-about-vector-2.png"
                   alt="vector"
@@ -120,7 +159,7 @@ const AboutSection5 = () => {
                   alt="vector"
                   className="vector vector--3"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </DivAnimateYAxis>

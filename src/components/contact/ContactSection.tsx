@@ -70,7 +70,7 @@ const ContactSection = ({ innerPage }: Props) => {
                 <ul className="rv-5-footer-timings">
                   <li>
                     <span className="key">Monday - Friday : </span>
-                    <span className="value">09:30 am - 16:30 pm</span>
+                    <span className="value">09: am - 16:30 pm</span>
                   </li>
                
                 </ul>

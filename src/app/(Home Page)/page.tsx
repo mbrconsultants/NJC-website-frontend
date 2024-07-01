@@ -10,8 +10,10 @@ import FunctionSection from "@/components/function/FunctionSection";
 import PricingSection4 from "@/components/pricing/PricingSection4";
 import TestimonialSection5 from "@/webComponents/testimonial/TestimonialSection5";
 import TeamSection6 from "@/webComponents/team/TeamSection6";
+import TeamSection7 from "@/webComponents/team/TeamSection7";
+
 import CompareSection from "@/components/compare/CompareSection";
-import ContactSection4 from "@/components/contact/ContactSection4";
+import ContactSection4 from "@/webComponents/contact/ContactSection4";
 import BlogSection6 from "@/components/blog/BlogSection6";
 import FooterSection4 from "@/components/footer/FooterSection4";
 import AboutSection5 from "@/webComponents/about/AboutSection5";
@@ -36,9 +38,12 @@ const [chiefJudge, setChiefJudge] = useState<any>();
   });
   const [councilMember, setCouncilMember] = useState<any>();
   const [managementStaffs, setManagementStaffs] = useState<any>();
-
-  
-
+  const [getNjcProfile, setSetNjcProfile] = useState<{ id: number; summary
+: string }>({
+    id: 0,
+    summary
+: "",
+  });
 
 
 
@@ -55,12 +60,12 @@ const [chiefJudge, setChiefJudge] = useState<any>();
       setMission(res.data.data.mission)
       setCouncilMember(res.data.data.getcouncilMember)
       setManagementStaffs(res.data.data.getManagementStaff)
+      setSetNjcProfile(res.data.data.getNjcProfile)
 
     } catch (err) {
       console.log(err);
   };
   }
-  
 
   useEffect(() => {
     homePageData();
@@ -69,22 +74,23 @@ const [chiefJudge, setChiefJudge] = useState<any>();
     <main className="overflow-x-hidden car-wash-demo">
       <HeaderSection7 />
       <BannerSection8 mainSlider={ mainSlider} />
-     {chiefJudge && <TestimonialSection5 chiefJudge={ chiefJudge} />} 
+     {chiefJudge && <TestimonialSection5 chiefJudge={ chiefJudge} getNjcProfile={getNjcProfile}/>} 
       
-      <ServiceSection5  mission={mission} vission={vision} />
+      <ServiceSection5  mission={mission} vission={vision}  />
       <FunctionSection />
       
-      <TeamSection6 data={ "Current Council Members"} councilMember={councilMember} />
-      <TeamSection6 data={ "Management Staffs"} councilMember={managementStaffs}  />
-
-      <AboutSection5 />
+      {/* <TeamSection6 data={ "Current Council Members"} councilMember={councilMember} />
+      <TeamSection6 data={ "Management Staffs"} councilMember={managementStaffs}  /> */}
+   <TeamSection7 data={ "Current Council Members"} councilMember={councilMember} />
+      <TeamSection7 data={ "Management Staffs"} councilMember={managementStaffs}  />
+      <AboutSection5 mainSlider={ mainSlider}/>
 
 
       {/* <AboutSection6 /> */}
       {/* <ServiceSection6 /> */}
       {/* <PricingSection4 /> */}
       {/* <CompareSection /> */}
-      <ContactSection4 />
+      <ContactSection4  />
       <BlogSection6 />
       <FooterSection4
         style="rv-18-footer"

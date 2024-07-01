@@ -10,9 +10,14 @@ interface ChiefJudgeProps {
     profileID: string;
     photo: string;
   };
+   getNjcProfile: {
+    id: number;
+    summary: string;
+  };
 }
 
-const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge }) => {
+const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge, getNjcProfile }) => {
+  
   
   
   return (
@@ -23,7 +28,7 @@ const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge }) => {
             <h2 className="rv-18-testimonial_heading rv-text-anime">
               FROM THE CHAIRMAN'S DESK
               <span className="position-absolute">
-                <img src="assets/img/slider/home-4-banner-sh.png" alt="image" />
+                {/* <img src={process.env.NEXT_PUBLIC_UPLOAD_URL +chiefJudge.photo} alt="image" /> */}
               </span>
             </h2>
           </div>
@@ -52,10 +57,9 @@ const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge }) => {
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                   </div>
-                  <p className="rv-18-single_testimonial_text_area">
-                    The National Judicial Council is one of the Federal Executive Bodies created by the 1999 Constitution of the Federal Republic of Nigeria. Amongst other functions, it is responsible for the Appointment, Promotion and Discipline of Judicial Officers.
-                    The Council has through various Reforms ensured that it protects and preserves the sanctity of the Judiciary. It is our desire to foster a justice system that is fair, speedy and meets the hope of all men.
-                  </p>
+                  <p className="rv-18-single_testimonial_text_area" dangerouslySetInnerHTML={{ __html: getNjcProfile.summary }} >
+                   
+                       </p>
                   <div className="rv-18-single_testimonial_bottom">
                     <div className="rv-18-testimonial_author_meta">
                       <h3 className="rv-18-testimonial_author_name">
@@ -73,7 +77,7 @@ const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge }) => {
               </SwiperSlide>
                  <SwiperSlide className="rv-18-single_testimonial swiper-slide">
                 <div className="rv-18-single_testimonial_image">
-                  <img src="assets/img/chairman9732547091716559972.jpg" alt="image" />
+                  <img src={process.env.NEXT_PUBLIC_UPLOAD_URL +chiefJudge.photo}  alt="image" />
                 </div>
                 <div className="rv-18-single_testimonial_content">
                   <div className="rv-18-single_testimonial_rating">
@@ -83,10 +87,8 @@ const TestimonialSection5: React.FC<ChiefJudgeProps> = ({ chiefJudge }) => {
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                   </div>
-                  <p className="rv-18-single_testimonial_text_area">
-                    The National Judicial Council is one of the Federal Executive Bodies created by the 1999 Constitution of the Federal Republic of Nigeria. Amongst other functions, it is responsible for the Appointment, Promotion and Discipline of Judicial Officers.
-                    The Council has through various Reforms ensured that it protects and preserves the sanctity of the Judiciary. It is our desire to foster a justice system that is fair, speedy and meets the hope of all men.
-                  </p>
+                  <p className="rv-18-single_testimonial_text_area"  dangerouslySetInnerHTML={{ __html: getNjcProfile.summary }}>
+                                 </p>
                   <div className="rv-18-single_testimonial_bottom">
                     <div className="rv-18-testimonial_author_meta">
                       <h3 className="rv-18-testimonial_author_name">

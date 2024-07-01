@@ -42,6 +42,7 @@ const NavSection = ({ style, logo }: Props) => {
       <ul className="justify-content-center">
         <li >
           <a
+            href="/"
             className="dropdown-btn"
             role="button"
           
