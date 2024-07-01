@@ -6,7 +6,6 @@ import endpoint from "../../context/endpoint";
 
 const CurrentCouncilMembersSection = () => {
   const [data, setdata] = useState([]);
-  // const [currentCouncilData, setCurrentCouncilData] = useState([]);
   const [currentCouncilData, setCurrentCouncilData] = useState<{ id: number; title: string; fullname: string; designation: string; position: string; zone: string; profiles: string; picture: string;}>({
     id: 0,
     title: "",
@@ -65,7 +64,7 @@ const CurrentCouncilMembersSection = () => {
                       {item.designation}
                     </span>
                     <h5 className="rv-3-project__title">
-                      <a href="#">{item.fullname}</a>
+                      <Link href={`/currentcouncilmember-details/${item.id}`}>{item.fullname}</Link>
                     </h5>
                   </div>
                 </div>
