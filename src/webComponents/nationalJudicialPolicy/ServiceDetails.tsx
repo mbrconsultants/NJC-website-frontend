@@ -73,6 +73,13 @@ const ServiceDetails = ({ img, title }: Props) => {
 
               <DivAnimateYAxis>
                 <div
+                  style={{
+                    textAlign: "justify",
+                    textJustify: "inter-word",
+                    width: "100%",
+                    margin: "auto",
+                    maxWidth: "100%",
+                  }}
                   dangerouslySetInnerHTML={{
                     __html: policy,
                   }}

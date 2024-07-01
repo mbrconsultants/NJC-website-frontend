@@ -10,6 +10,7 @@ import ServiceDetailsQuote from "./ServiceDetailsQuote";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import BlogRecentSection from "./BlogRecentSection";
 import endpoint from "@/context/endpoint";
+import "./ServiceDetails.css";
 
 type Props = {
   title: string;
@@ -69,7 +70,10 @@ const ServiceDetails = ({ title }: Props) => {
               <ServiceDetailsQuote />
 
               <DivAnimateYAxis>
-                <div dangerouslySetInnerHTML={{ __html: data.profiles }} />
+                <div
+                  className="justify-text-container justify-text"
+                  dangerouslySetInnerHTML={{ __html: data.profiles }}
+                />
               </DivAnimateYAxis>
 
               {/* <ServiceDetailCard /> */}

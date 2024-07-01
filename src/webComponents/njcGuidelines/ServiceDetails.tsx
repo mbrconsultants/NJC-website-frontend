@@ -44,6 +44,13 @@ const ServiceDetails = ({ img, title }: Props) => {
               <h3 className="rv-service-details__title">{title}</h3>
               <DivAnimateYAxis>
                 <div
+                  style={{
+                    textAlign: "justify",
+                    textJustify: "inter-word",
+                    width: "100%",
+                    margin: "auto",
+                    maxWidth: "100%",
+                  }}
                   dangerouslySetInnerHTML={{
                     __html: rules,
                   }}
