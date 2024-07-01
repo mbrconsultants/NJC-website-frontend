@@ -38,14 +38,14 @@ const NavSection = ({ style, logo }: Props) => {
     <div className={style}>
       <ul className="justify-content-center">
         <li >
-          <a
+          <Link
             href="/"
             className="dropdown-btn"
-            role="button"
+           
           
           >
             Home
-          </a>
+          </Link>
         </li>
 
         <li className={dropdown.about_NJC ? "rv-dropdown-active" : ""}>

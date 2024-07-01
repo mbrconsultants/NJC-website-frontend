@@ -12,7 +12,7 @@ import FooterSection8 from "@/components/footer/FooterSection8";
 import ServiceSection7 from "@/components/service/ServiceSection7";
 
 export const metadata: Metadata = {
-  title: "Servio - Barber Shop",
+  title: "N - Barber Shop",
   description: "Developed by Azizur Rahman",
 };
 export default function Home() {
