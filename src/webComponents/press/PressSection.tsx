@@ -24,10 +24,10 @@ const BlogDetailSection = ({ img, title, id }: Props) => {
                 <ImgAnimateLeftToRight src={img} alt="blog banner" />
               </div>
 
-              <BlogDetailInfo />
+              {/* <BlogDetailInfo /> */}
               <h2 className="rv-blog-details__title">{title}</h2>
 
-              <BlogDetailDesc />
+              {/* <BlogDetailDesc /> */}
 
            
             </div>
@@ -35,7 +35,7 @@ const BlogDetailSection = ({ img, title, id }: Props) => {
 
           <div className="col-lg-4 col-md-8 col-10 col-xxs-12">
             <BlogSearchbar />
-            <BlogRecentSection />
+            {/* <BlogRecentSection /> */}
           </div>
         </div>
       </div>
