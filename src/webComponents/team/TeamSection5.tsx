@@ -7,32 +7,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import DivAnimateXAxis from "../utils/DivAnimateXAxis";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
-const TeamSection5 = () => {
+interface CouncilMember {
+  id: number;
+  designation: string;
+  fullname: string;
+  picture: string;
+  position: string;
+  rank: number;
+}
+
+interface TeamSection6Props {
+  data: string;
+  councilMember: CouncilMember[]
+}
+const TeamSection5: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
+    let url = '';
+  if (data == "Current Council Members") {
+    url ="/currentcouncilmember-details/"
+  } else {
+    url="/managementstaff-details/"
+  }
   return (
     <section className="rv-8-team rv-section-spacing">
       <div className="container">
         <div className="rv-3-section-heading">
           <div className="rv-3-section-heading__left">
-            <h6 className="rv-8-section__sub-title rv-text-anime">our team</h6>
-            <h2 className="rv-8-section__title rv-text-anime">
-              Meet Our {""}
-              <span className="styled">
-                Team
-                <svg
-                  width="191"
-                  height="20"
-                  viewBox="0 0 191 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M0.350829 19.9954C62.8308 5.83547 125.782 4.29367 187.776 13.0908C189.008 13.2659 190.838 11.7486 190.99 9.4079C191.144 7.02425 189.429 5.15235 188.194 4.95568C125.733 -5.0348 63.0249 0.340437 0.251936 18.7297C-0.147058 18.8469 -0.0406972 20.0845 0.350829 19.9954Z"
-                    fill="#93B617"
-                  ></path>
-                </svg>
-              </span>
+            {/* <h6 className="rv-8-section__sub-title rv-text-anime">{data}</h6> */}
+            <h2 className="rv-8-section__title rv-text-anime" style={{color:"#00A659"}}>
+             {data}
+            
             </h2>
           </div>
 
@@ -82,16 +85,16 @@ const TeamSection5 = () => {
             }}
             modules={[Autoplay, Navigation]}
           >
-            {teamData5.map((item) => (
+            {councilMember && councilMember.map((item) => (
               <SwiperSlide className="rv-8-member rv-1-speaker" key={item.id}>
                 <div className="rv-8-member__img">
-                  <img src={item.img} alt="Project Image" />
+                  <img src={process.env.NEXT_PUBLIC_UPLOAD_URL +item.picture} alt="Project Image" />
                   <div className="rv-1-speaker__socials">
-                    {item.socials.map((social, index) => (
+                    {/* {item.socials.map((social, index) => (
                       <Link href={social.url} key={index}>
                         <i className={social.icon}></i>
                       </Link>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
 
@@ -100,7 +103,7 @@ const TeamSection5 = () => {
                     {item.designation}
                   </span>
                   <h5 className="rv-3-project__title">
-                    <Link href="#">{item.name}</Link>
+                    <Link href="#">{item.fullname}</Link>
                   </h5>
                 </div>
               </SwiperSlide>

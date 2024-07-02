@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import NumberCounter from "../utils/NumberCounter";
 import { useAppDispatch } from "@/redux/hooks";
@@ -18,6 +19,9 @@ interface BannerSection8Props {
 }
 
 const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
+  console.log('==============mainSlider======================');
+  console.log(mainSlider);
+  console.log('====================================');
   const dispatch = useAppDispatch();
   const openVideoModal = () => {
     dispatch(toggleVideoModalOpen());
@@ -47,7 +51,7 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
                     key={index}
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
                     style={{ height: "600px" }}
-                    src={process.env.NEXT_PUBLIC_UPLOAD_URL + "/gallery/" + item.image_link}
+                    src={process.env.NEXT_PUBLIC_UPLOAD_URL  + item.image_link}
                   />
                 ))}
               </div>
@@ -65,9 +69,9 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
           <div className="col-lg-6">
             <div className="rv-8-about__txt">
               <h2 className="rv-8-section__title rv-text-anime">
-                Website
+                Our   Visitors
                 <span className="styled">
-                  Statistics
+                   
                   <svg
                     width="191"
                     height="20"
@@ -85,9 +89,9 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
                 </span>
               </h2>
 
-              <p className="rv-8-about__descr">
-                The number of Website visitors
-              </p>
+              {/* <p className="rv-8-about__descr">
+                The number of Websiquis deleniti sed possimus hic quaerat quidem explicabo animi iure itaque officia vitae, debitis laboriosam atque qui?
+              </p> */}
 
               <div className="rv-8-about__stats d-flex justify-content-around align-items-center">
                 <div className="rv-8-about-stat text-center">
@@ -126,9 +130,19 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
                   </h6>
                   <h6 className="rv-8-about-stat__name">Daily Visitor</h6>
                 </div>
+                
               </div>
+              <div className="" style={{ marginBottom: "10px" }}>
+               <Link href="/contact" className="d-sm-inline-block d-none text-white p-2"
+                style={{ backgroundColor: "green" }}>
+                  {/* <i className="fa fa-image" aria-hidden="true"></i> */}
+                  - Explore NJC Gallery -
+                </Link>
+               </div>
+              
 
-              {/* <div className="vectors">
+          
+              <div className="vectors">
                 <img
                   src="assets/img/rv-8-about-vector-2.png"
                   alt="vector"
@@ -144,8 +158,9 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
                   alt="vector"
                   className="vector vector--3"
                 />
-              </div> */}
+              </div>
             </div>
+            
           </div>
         </DivAnimateYAxis>
       </div>

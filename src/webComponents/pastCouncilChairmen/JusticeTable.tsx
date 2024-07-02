@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
-import BlogRecentSection from "./BlogRecentSection";
+// import BlogRecentSection from "./BlogRecentSection";
+import BlogRecentSection from "../blog/BlogRecentSection";
 import endpoint from "@/context/endpoint";
 
 interface Justice {
@@ -13,6 +14,7 @@ interface Justice {
 
 const JusticeTable: React.FC = () => {
   const [justices, setJustices] = useState<Justice[]>([]);
+    const [allNews, setAllNews] = useState<any>([]);
 
   const GetFormerChiefJustice = async () => {
     try {
@@ -34,8 +36,22 @@ const JusticeTable: React.FC = () => {
     }
   };
 
+    const getAllNews = async () => {
+    try {
+      const res = await endpoint.get("/news");
+      if (Array.isArray(res.data.data.getNews)) {
+        setAllNews(res.data.data.getNews);
+      } else {
+        console.error("API response is not an array");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     GetFormerChiefJustice();
+    getAllNews();
   }, []);
 
   return (
@@ -89,7 +105,7 @@ const JusticeTable: React.FC = () => {
           </div>
 
           <DivAnimateYAxis className="col-lg-4 col-md-6 col-9 col-xxs-12">
-            <BlogRecentSection />
+            <BlogRecentSection allNews={allNews}/>
           </DivAnimateYAxis>
         </div>
       </div>

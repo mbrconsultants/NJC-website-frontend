@@ -63,10 +63,10 @@ const GallerySection4: React.FC = () => {
           <DivAnimateYAxis position={30} visible>
             <div className="row justify-content-center row-cols-lg-5 row-cols-sm-3 row-cols-2 rv-inner-gallery-row">
               {gallery.map((item, index) => (
-                <div className="col mb-4" key={item.GalleryCoverImg.galleryID}>
+                <div className="col mb-4" key={item.GalleryCoverImg.groupID}>
                   <div className="rv-9-gallery__img">
                     <a
-                      href={`/gallery/details/${item.GalleryCoverImg.galleryID}`}
+                      href={`/gallery/details/${item.GalleryCoverImg.groupID}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

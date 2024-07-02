@@ -8,7 +8,8 @@ import ServiceCategorySection from "./ServiceCategorySection";
 import ServiceDetailsQuote from "./ServiceDetailsQuote";
 // import ServiceDetailCard from "./ServiceDetailCard";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
-import BlogRecentSection from "./BlogRecentSection";
+// import BlogRecentSection from "./BlogRecentSection";
+import BlogRecentSection from "../blog/BlogRecentSection";
 import endpoint from "@/context/endpoint";
 import "./ServiceDetails.css";
 
@@ -18,6 +19,8 @@ type Props = {
 
 const ServiceDetails = ({ title }: Props) => {
   const [data, setData] = useState<any>({});
+  const [allNews, setAllNews] = useState<any>([]);
+
 
   interface ImgAnimateLeftToRightProps {
     src: string;
@@ -42,10 +45,24 @@ const ServiceDetails = ({ title }: Props) => {
       })
       .catch((err: any) => console.log(err));
   };
-  console.log(data, "api data");
+
+
+     const getAllNews = async () => {
+    try {
+      const res = await endpoint.get("/news");
+      if (Array.isArray(res.data.data.getNews)) {
+        setAllNews(res.data.data.getNews);
+      } else {
+        console.error("API response is not an array");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     handleGetChiefJustice();
+    getAllNews();
   }, []);
 
   return (
@@ -83,7 +100,7 @@ const ServiceDetails = ({ title }: Props) => {
           </div>
 
           <DivAnimateYAxis className="col-lg-4 col-md-6 col-9 col-xxs-12">
-            <BlogRecentSection />
+            <BlogRecentSection allNews={allNews} />
             {/* <ServiceSearchbar /> */}
 
             {/* <ServiceCategorySection /> */}
