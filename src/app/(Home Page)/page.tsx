@@ -75,11 +75,11 @@ const [chiefJudge, setChiefJudge] = useState<any>();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      homePageData();
       console.log('Running in the browser')
     } else {
       console.log("running in server")
     }
-    homePageData();
   }, []);
   return (
     <main className="overflow-x-hidden car-wash-demo">
