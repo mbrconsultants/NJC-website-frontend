@@ -79,6 +79,11 @@ const [chiefJudge, setChiefJudge] = useState<any>();
   }
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.log('Running in the browser')
+    } else {
+      console.log("running in server")
+    }
     homePageData();
     getGalleryImages();
   }, []);
