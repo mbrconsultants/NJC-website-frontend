@@ -58,7 +58,7 @@ const ManagementStaffDetail = (params:{id:number},{ designation, picture, fullna
                     alt={`${details?.fullname} picture`}
                     style={{
                       width: '400px',
-                      height: '380px',
+                      height: '420px',
                     }}
                   />
                 </div>

@@ -62,24 +62,22 @@ const NavSection = ({ style, logo }: Props) => {
           </a>
           <ul className="sub-menu">
             <li>
-              <Link href="$">Profile of NJC</Link>
+              <Link href="/profile-of-NJC">Profile of NJC</Link>
             </li>
             <li>
-              <Link href="#">Composition of NJC</Link>
+              <Link href="/composition-of-NJC">Composition of NJC</Link>
             </li>
              <li>
-              <Link href="#">Structure of NJC</Link>
-            </li> <li>
-              <Link href="#">Composition of NJC</Link>
-            </li>
+              <Link href="/structure-of-NJC">Structure of NJC</Link>
+            </li> 
             <li>
-              <Link href="#">Committees in NJC</Link>
+              <Link href="/committees-of-NJC">Committees in NJC</Link>
             </li>
               <li>
-              <Link href="#">Current Council Members</Link>
+              <Link href="/current-council-members">Current Council Members</Link>
             </li>
               <li>
-              <Link href="#">Management Staffs</Link>
+              <Link href="/management-staff">Management Staffs</Link>
             </li>
           </ul>
         </li>

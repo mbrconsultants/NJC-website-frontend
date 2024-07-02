@@ -29,7 +29,7 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
           <div className="col-lg-6">
             <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
               <div className="carousel-indicators">
-                {mainSlider.map((item, index) => (
+                {mainSlider && mainSlider.map((item, index) => (
                   <button
                     key={index + 1}
                     type="button"
@@ -42,7 +42,7 @@ const AboutSection5: React.FC<BannerSection8Props> = ({ mainSlider }) => {
                 ))}
               </div>
               <div className="carousel-inner">
-                {mainSlider.map((item, index) => (
+                {mainSlider && mainSlider.map((item, index) => (
                   <img
                     key={index}
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
