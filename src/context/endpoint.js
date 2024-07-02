@@ -8,10 +8,10 @@ instance.interceptors.response.use(
     return response;
   },
   (error) => {
-    if (error.response && error.response.status === 401) {
-      window.location.reload();
-      return error;
-    }
+    // if (error.response && error.response.status === 401) {
+    //   window.location.reload();
+    //   return error;
+    // }
     throw error;
   }
 );

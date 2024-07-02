@@ -61,7 +61,7 @@ const GallerySection4: React.FC<GallerySectionProps> = ({ params }) => {
                 <div className="col mb-4" key={item.GalleryCoverImg.galleryID}>
                   <div className="rv-9-gallery__img">
                     <a
-                      href={`/gallery/details/${item.GalleryCoverImg.galleryID}`}
+                      href={`#`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

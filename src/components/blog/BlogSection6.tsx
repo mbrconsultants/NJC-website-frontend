@@ -90,9 +90,9 @@ const BlogSection6: React.FC = () => {
                     <a href="#" className="rv-18-single_blog_meta_catagory">
                       <i className="far fa-user"></i>Admin
                     </a>
-                    <p className="rv-18-single_blog_comment">
+                    {/* <p className="rv-18-single_blog_comment">
                       <i className="far fa-comments"></i>0 Comments
-                    </p>
+                    </p> */}
                     <span className="rv-18-single_blog_date h-5 w-10">
                       {formatDate(item.display_date)}
                     </span>

@@ -101,7 +101,7 @@ const SpeakerSlider = () => {
               }}
               modules={[Autoplay, Navigation]}
             >
-              {speakersData.map((item, index) => (
+              {/* {speakersData.map((item, index) => (
                 <SwiperSlide key={item.id}>
                   <div className="rv-1-speaker">
                     <video
@@ -127,7 +127,7 @@ const SpeakerSlider = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-              ))}
+              ))} */}
             </Swiper>
           </DivAnimateYAxis>
         </div>

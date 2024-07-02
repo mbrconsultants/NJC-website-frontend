@@ -4,13 +4,29 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import endpoint from "../../context/endpoint";
 
+<<<<<<< HEAD
 const ManagementStaffSection = () => {
   const [data, setData] = useState([]);
   const [managementStaffData, setManagementStaffData] = useState<
     { id: number; rank: number; title: string; fullname: string; designation: string; position: string; picture: string; }[]
   >([]);
+=======
+interface ManagementStaffData {
+  id: number;
+  rank: number;
+  title: string;
+  fullname: string;
+  designation: string;
+  position: string;
+  picture: string;
+}
+
+const ManagementStaffSection = () => {
+  const [data, setData] = useState<ManagementStaffData[]>([]);
+  const [managementStaffData, setManagementStaffData] = useState<ManagementStaffData[]>([]);
+>>>>>>> main
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
 
   const fetchManagementStaffData = async () => {
     try {
@@ -37,7 +53,7 @@ const ManagementStaffSection = () => {
       <div className="container">
         <div className="rv-inner-team-row" data-aos="fade-up">
           <div className="row row-cols-lg-3 row-cols-2 row-cols-xxs-1 g-30">
-            {managementStaffData && managementStaffData.map((item) => (
+            {managementStaffData.map((item) => (
               <div className="col" key={item.id}>
                 <div className="rv-9-member rv-inner-member">
                   <div className="rv-9-member__img">
@@ -47,11 +63,19 @@ const ManagementStaffSection = () => {
                       style={{
                         width: '450px',
                         height: '380px',
+<<<<<<< HEAD
                         // objectFit: 'cover'
                       }}
                     />
                   </div>
                   <div className="rv-9-member__txt text-center">
+=======
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </div>
+                  <div className="rv-9-member__txt">
+>>>>>>> main
                     <span className="rv-3-project__sub-title">
                       {item.designation}
                     </span>

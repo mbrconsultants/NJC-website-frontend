@@ -1,5 +1,5 @@
 import Gallery from "@/webComponents/gallery/GalleryGroup";
-import BreadcrumbSection from "@/webComponents/breadcrumb/BreadcrumbSection";
+import BreadcrumbSection from "@/components/breadcrumb/BreadcrumbSection";
 import InnerLayout from "@/webComponents/layout/InnerLayout";
 import { Metadata } from "next";
 
@@ -12,7 +12,9 @@ export default function Home({ params }: { params: { id: number } }) {
     <main className="rv-14-home">
       <InnerLayout>
         <BreadcrumbSection title="Gallery" currentPage="Gallery" />
-        <Gallery params={params} />
+          <div className="mt-10">
+          <Gallery params={params} />
+          </div>
       </InnerLayout>
     </main>
   );

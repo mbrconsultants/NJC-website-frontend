@@ -11,7 +11,7 @@ type DropdownState = {
   service: boolean;
   blog: boolean;
   about_NJC: boolean;
-  NJC_guidelines: boolean;
+  procedural_rules: boolean;
   media: boolean;
 };
 const NavSection = ({ style, logo }: Props) => {
@@ -21,7 +21,7 @@ const NavSection = ({ style, logo }: Props) => {
     service: false,
     about_NJC: false,
     blog: false,
-    NJC_guidelines: false,
+    procedural_rules: false,
     media: false,
   });
 
@@ -104,17 +104,17 @@ const NavSection = ({ style, logo }: Props) => {
           </li>
         )}
 
-        <li className={dropdown.NJC_guidelines ? "rv-dropdown-active" : ""}>
+        <li className={dropdown.procedural_rules ? "rv-dropdown-active" : ""}>
           <a
             className="dropdown-btn"
             role="button"
-            onClick={() => handleToggleDropdown("NJC_guidelines")}
+            onClick={() => handleToggleDropdown("procedural_rules")}
           >
             NJC Guidelines
           </a>
           <ul className="sub-menu">
             <li>
-              <Link href="/njc-guidelines">
+              <Link href="/procedural-rules">
                 NJC Guidelines and Procedural Rules
               </Link>
             </li>
@@ -129,7 +129,7 @@ const NavSection = ({ style, logo }: Props) => {
             </li>
           </ul>
         </li>
-        <li className={dropdown.NJC_guidelines ? "rv-dropdown-active" : ""}>
+        <li className={dropdown.procedural_rules ? "rv-dropdown-active" : ""}>
           <a
             className="dropdown-btn"
             role="button"

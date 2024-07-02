@@ -4,13 +4,22 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import endpoint from "../../context/endpoint";
 
+interface CurrentCouncilData {
+  id: number;
+  title: string;
+  fullname: string;
+  designation: string;
+  position: string;
+  zone: string;
+  profiles: string;
+  picture: string;
+}
+
 const CurrentCouncilMembersSection = () => {
-  const [data, setData] = useState([]);
-  const [currentCouncilData, setCurrentCouncilData] = useState<
-    { id: number; title: string; fullname: string; designation: string; position: string; zone: string; profiles: string; picture: string; }[]
-  >([]);
+  const [data, setData] = useState<CurrentCouncilData[]>([]);
+  const [currentCouncilData, setCurrentCouncilData] = useState<CurrentCouncilData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
 
   const fetchCurrentCouncilData = async () => {
     try {
@@ -37,7 +46,7 @@ const CurrentCouncilMembersSection = () => {
       <div className="container">
         <div className="rv-inner-team-row" data-aos="fade-up">
           <div className="row row-cols-lg-3 row-cols-2 row-cols-xxs-1 g-30">
-            {currentCouncilData && currentCouncilData.map((item) => (
+            {currentCouncilData.map((item) => (
               <div className="col" key={item.id}>
                 <div className="rv-9-member rv-inner-member">
                   <div className="rv-9-member__img">
