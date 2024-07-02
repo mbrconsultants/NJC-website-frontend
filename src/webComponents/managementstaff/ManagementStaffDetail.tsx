@@ -57,7 +57,7 @@ const ManagementStaffDetail = (params:{id:number},{ designation, picture, fullna
                     src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}${details?.picture}`}
                     alt={`${details?.fullname} picture`}
                     style={{
-                      width: '400px',
+                      width: '420px',
                       height: '420px',
                     }}
                   />

@@ -1,10 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import endpoint from "../../context/endpoint";
-import { useParams } from 'next/navigation';
-import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
 type Props = {
   designation: string;

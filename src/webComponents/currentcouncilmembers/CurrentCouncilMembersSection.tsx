@@ -5,17 +5,10 @@ import React, { useEffect, useState } from "react";
 import endpoint from "../../context/endpoint";
 
 const CurrentCouncilMembersSection = () => {
-  const [data, setdata] = useState([]);
-  const [currentCouncilData, setCurrentCouncilData] = useState<{ id: number; title: string; fullname: string; designation: string; position: string; zone: string; profiles: string; picture: string;}>({
-    id: 0,
-    title: "",
-    fullname: "",
-    designation: "",
-    position: "",
-    zone: "",
-    profiles: "",
-    picture: ""
-  });
+  const [data, setData] = useState([]);
+  const [currentCouncilData, setCurrentCouncilData] = useState<
+    { id: number; title: string; fullname: string; designation: string; position: string; zone: string; profiles: string; picture: string; }[]
+  >([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -23,10 +16,10 @@ const CurrentCouncilMembersSection = () => {
     try {
       const res = await endpoint.get("/current-council-members");
       console.log("Current Council Data", res.data.data);
-      setdata(res.data.data);
+      setData(res.data.data);
       setCurrentCouncilData(res.data.data.getCurrentMembers);
       setLoading(false);
-    } catch (err) {
+    } catch (err: any) {
       setError(err);
       setLoading(false);
     }
@@ -53,12 +46,12 @@ const CurrentCouncilMembersSection = () => {
                       alt={`${item.fullname} picture`}
                       style={{
                         width: '450px',
-                        height: '380px',
-                        objectFit: 'contain'
+                        height: '370px',
+                        // objectFit: 'contain'
                       }}
                     />
                   </div>
-                  <div className="rv-9-member__txt">
+                  <div className="rv-9-member__txt text-center">
                     <span className="rv-3-project__sub-title">
                       {item.designation}
                     </span>
