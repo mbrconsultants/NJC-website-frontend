@@ -55,12 +55,12 @@ const CurrentCouncilMembersSection = () => {
                       alt={`${item.fullname} picture`}
                       style={{
                         width: '450px',
-                        height: '370px',
-                        // objectFit: 'contain'
+                        height: '380px',
+                        objectFit: 'contain'
                       }}
                     />
                   </div>
-                  <div className="rv-9-member__txt text-center">
+                  <div className="rv-9-member__txt">
                     <span className="rv-3-project__sub-title">
                       {item.designation}
                     </span>
