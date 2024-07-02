@@ -4,13 +4,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import endpoint from "../../context/endpoint";
 
-<<<<<<< HEAD
-const ManagementStaffSection = () => {
-  const [data, setData] = useState([]);
-  const [managementStaffData, setManagementStaffData] = useState<
-    { id: number; rank: number; title: string; fullname: string; designation: string; position: string; picture: string; }[]
-  >([]);
-=======
 interface ManagementStaffData {
   id: number;
   rank: number;
@@ -24,7 +17,6 @@ interface ManagementStaffData {
 const ManagementStaffSection = () => {
   const [data, setData] = useState<ManagementStaffData[]>([]);
   const [managementStaffData, setManagementStaffData] = useState<ManagementStaffData[]>([]);
->>>>>>> main
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -63,19 +55,11 @@ const ManagementStaffSection = () => {
                       style={{
                         width: '450px',
                         height: '380px',
-<<<<<<< HEAD
-                        // objectFit: 'cover'
+                        // objectFit: 'contain'
                       }}
                     />
                   </div>
                   <div className="rv-9-member__txt text-center">
-=======
-                        objectFit: 'contain'
-                      }}
-                    />
-                  </div>
-                  <div className="rv-9-member__txt">
->>>>>>> main
                     <span className="rv-3-project__sub-title">
                       {item.designation}
                     </span>

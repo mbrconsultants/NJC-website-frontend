@@ -52,21 +52,6 @@ const ManagementStaffDetail = () => {
   return (
     <section className="rv-service-details rv-section-spacing">
       <div className="container">
-<<<<<<< HEAD
-          <div className="">
-            <div className="d-flex justify-content-center">
-              <div className="row">
-                <div className="card col-lg-12">
-                  <img 
-                    src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}${details?.picture}`}
-                    alt={`${details?.fullname} picture`}
-                    style={{
-                      width: '420px',
-                      height: '420px',
-                    }}
-                  />
-                </div>
-=======
         <div className="">
           <div className="d-flex justify-content-center">
             <div className="row">
@@ -79,7 +64,6 @@ const ManagementStaffDetail = () => {
                     height: '420px',
                   }}
                 />
->>>>>>> main
               </div>
             </div>
           </div>
