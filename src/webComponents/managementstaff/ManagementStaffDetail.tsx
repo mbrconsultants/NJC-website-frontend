@@ -8,19 +8,27 @@ import { useParams } from 'next/navigation';
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 import BlogRecentSection from "../blog/BlogRecentSection";
 
-type Props = {
+interface ManagementStaffDetails {
+  id: number;
+  title: string;
+  fullname: string;
+  designation: string;
+  profile: string;
+  picture: string;
+}
+
+interface Props {
   designation: string;
   picture: string;
   fullname: string;
   profile: string;
-};
+}
 
-const ManagementStaffDetail = (params:{id:number},{ designation, picture, fullname, profile }: Props) => {
-  // const params = useParams();
-  const id = params.id;
-  const [details, setDetails] = useState();
+const ManagementStaffDetail = ({ designation, picture, fullname, profile }: Props) => {
+  const { id } = useParams();
+  const [details, setDetails] = useState<ManagementStaffDetails | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     getSingleManagementStaff();
@@ -49,29 +57,29 @@ const ManagementStaffDetail = (params:{id:number},{ designation, picture, fullna
   return (
     <section className="rv-service-details rv-section-spacing">
       <div className="container">
-          <div className="">
-            <div className="d-flex justify-content-center">
-              <div className="row">
-                <div className="card col-lg-12">
-                  <img 
-                    src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}${details?.picture}`}
-                    alt={`${details?.fullname} picture`}
-                    style={{
-                      width: '400px',
-                      height: '420px',
-                    }}
-                  />
-                </div>
+        <div className="">
+          <div className="d-flex justify-content-center">
+            <div className="row">
+              <div className="card col-lg-12">
+                <img 
+                  src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}${details?.picture}`}
+                  alt={`${details?.fullname} picture`}
+                  style={{
+                    width: '400px',
+                    height: '420px',
+                  }}
+                />
               </div>
             </div>
           </div>
-          <h3 className="rv-blog-details__title text-center mt-3" style={{color: 'green', fontWeight: 'bold'}}>
-            {details?.title} {details?.fullname}
-          </h3>
-            <p className="text-center" style={{color: 'green', fontWeight: 'bold'}}>{details?.designation}</p>
-          <p className="rv-blog-details-descr__txt" style={{ textAlign: 'justify' }}>
-            {stripHtmlTags(details?.profile)}
-          </p>
+        </div>
+        <h3 className="rv-blog-details__title text-center mt-3" style={{color: 'green', fontWeight: 'bold'}}>
+          {details?.title} {details?.fullname}
+        </h3>
+        <p className="text-center" style={{color: 'green', fontWeight: 'bold'}}>{details?.designation}</p>
+        <p className="rv-blog-details-descr__txt" style={{ textAlign: 'justify' }}>
+          {details?.profile && stripHtmlTags(details.profile)}
+        </p>
       </div>
     </section>
   );
