@@ -17,14 +17,9 @@ interface ManagementStaffDetails {
   picture: string;
 }
 
-interface Props {
-  designation: string;
-  picture: string;
-  fullname: string;
-  profile: string;
-}
 
-const ManagementStaffDetail = ({ designation, picture, fullname, profile }: Props) => {
+
+const ManagementStaffDetail = () => {
   const { id } = useParams();
   const [details, setDetails] = useState<ManagementStaffDetails | null>(null);
   const [loading, setLoading] = useState(true);
