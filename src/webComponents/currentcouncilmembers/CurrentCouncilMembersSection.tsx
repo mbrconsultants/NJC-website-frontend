@@ -56,11 +56,11 @@ const CurrentCouncilMembersSection = () => {
                       style={{
                         width: '450px',
                         height: '380px',
-                        objectFit: 'contain'
+                        // objectFit: 'contain'
                       }}
                     />
                   </div>
-                  <div className="rv-9-member__txt">
+                  <div className="rv-9-member__txt text-center">
                     <span className="rv-3-project__sub-title">
                       {item.designation}
                     </span>
