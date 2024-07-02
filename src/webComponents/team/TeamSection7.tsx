@@ -22,6 +22,13 @@ interface TeamSection6Props {
 }
 
 const TeamSection7: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
+
+  let url = '';
+  if (data == "Current Council Members") {
+    url ="/currentcouncilmember-details/"
+  } else {
+    url="/managementstaff-details/"
+  }
   return (
     <section className="rv-22-teem_main_area_section">
       <div className="container">
@@ -49,7 +56,7 @@ const TeamSection7: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
         <DivAnimateYAxis>
           <Swiper
             className="rv-22-teem_area"
-            slidesPerView={3}
+            slidesPerView={4}
             spaceBetween={20}
             loop={true}
             navigation={{
@@ -77,6 +84,9 @@ const TeamSection7: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
           >
             {councilMember && councilMember.map((item) => (
               <SwiperSlide className="rv-22-single_teem" key={item.id}>
+                <a href={`${url}${item.id}`}>
+
+               
                 <div className="rv-22-single_teem_image">
                   <img src={process.env.NEXT_PUBLIC_UPLOAD_URL +item.picture} alt="image" />
 
@@ -91,7 +101,8 @@ const TeamSection7: React.FC<TeamSection6Props> = ({ data, councilMember }) => {
                       ))} */}
                     </div>
                   </div>
-                </div>
+                  </div>
+                  </a>
               </SwiperSlide>
             ))}
           </Swiper>

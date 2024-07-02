@@ -17,7 +17,7 @@ const ServiceSection5: React.FC<ServicesProps>   = ({mission, vission }) => {
       <div className="container">
         <div className="rv-8-services__heading">
           <div className="rv-8-section__heading">
-            <h6 className="rv-8-section__sub-title rv-text-anime">
+            <h6 className="rv-8-section__sub-title rv-text-anime" style={{color:"#00A659"}}>
               Mission and Vision
             </h6>
             {/* <h2 className="rv-8-section__title rv-text-anime">
@@ -52,14 +52,15 @@ const ServiceSection5: React.FC<ServicesProps>   = ({mission, vission }) => {
 
               <div className="rv-8-service__txt">
                 <h4 className="rv-8-service__title">
-                  <a href="#">  MISSION</a>
+                  <a href="/profile-of-NJC" style={{color:"#00A659"}}>  MISSION</a>
                 </h4>
                 <p className="rv-3-service__descr">
                  {mission.msg}
                 </p>
                 <a
-                  href="/about"
+                  href="/profile-of-NJC"
                   className="rv-8-service__btn rv-1-schedule-conf__btn"
+                  style={{color:"#00A659"}}
                 >
                   Read More <i className="fa-regular fa-arrow-right"></i>
                 </a>
@@ -75,14 +76,15 @@ const ServiceSection5: React.FC<ServicesProps>   = ({mission, vission }) => {
 
               <div className="rv-8-service__txt">
                 <h4 className="rv-8-service__title">
-                  <a href="#">VISION</a>
+                  <a href="/profile-of-NJC" style={{color:"#00A659"}}>VISION</a>
                 </h4>
                 <p className="rv-3-service__descr">
                {vission.msg}
                 </p>
                 <a
-                  href="/about"
+                  href="/profile-of-NJC"
                   className="rv-8-service__btn rv-1-schedule-conf__btn"
+                  style={{color:"#00A659"}}
                 >
                   Read More <i className="fa-regular fa-arrow-right"></i>
                 </a>

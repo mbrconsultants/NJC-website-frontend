@@ -1,6 +1,7 @@
 "use client";
 import { functionsData } from "@/data/Data";
 import React from "react";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss/scrollbar";
@@ -41,8 +42,10 @@ const FunctionSection = () => {
             className="rv-8-functions__slider"
             slidesPerView={4}
             spaceBetween={15}
-            scrollbar={{
-              el: "#rv-8-functions__scrollbar",
+            autoplay={true}
+            navigation={{
+              prevEl: "#rv-8-team-slider-nav .prev",
+              nextEl: "#rv-8-team-slider-nav .next",
             }}
             breakpoints={{
               0: {
@@ -62,59 +65,92 @@ const FunctionSection = () => {
                 spaceBetween: 30,
               },
             }}
-            modules={[Scrollbar]}
+            modules={[Autoplay, Navigation]}
           >
            
               <SwiperSlide className="rv-8-function" >
                 {/* <img src={item.img} alt="icon" className="rv-8-function__img" /> */}
-                <div className="rv-8-function__txt">
-                  <h6 className="rv-8-function__title">
-                    <a href="#">{"RULES AND REGULATIONS"}</a>
+              <div className="rv-8-function__txt">
+                <div className=" mb-3">
+                <span className="fa fa-balance-scale" style={{fontSize:"30px", color: "#008000"}}></span>
+
+                </div>
+                <h6 className="rv-8-function__title mb-3">
+                  
+                  <a href="#">{"RULES AND REGULATIONS"}</a>
+                  
                   </h6>
                 <span className="rv-8-function__sub-title">
-                  <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> Procedural Rules</li>
-                  <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> Code of Conduct</li>
-                
-
+                  <a href="/procedural-rules" style={{ color: "#008000" }} className="mt-4"> <li style={{ textDecoration: "none" }}><i className="fa fa-certificate" aria-hidden="true" ></i> Procedural Rules</li></a>
+                  <br />
+                  <a href="/code-of-conduct" style={{ color: "#008000" }} className="mt-4"><li><i className="fa fa-certificate" aria-hidden="true" ></i> Code of Conduct</li></a>
+                   <br />
+                  <a href="/discipline-regulations" style={{ color: "#008000" }} className="mt-4">  <li><i className="fa fa-certificate" aria-hidden="true" style={{ color: "#008000" }}></i> Discipline Regulations</li></a>
+                   <br />
+                  <a href="/national-judicial-policy" style={{ color: "#008000" }} className="mt-4"><li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> NJC Policy</li></a>
                   </span>
                 </div>
             </SwiperSlide>
               <SwiperSlide className="rv-8-function" >
                 {/* <img src={item.img} alt="icon" className="rv-8-function__img" /> */}
-                <div className="rv-8-function__txt">
-                  <h6 className="rv-8-function__title">
-                    <a href="#">{"COMMITTEES IN NJC"}</a>
+              <div className="rv-8-function__txt">
+                 <div className=" mb-3">
+                <span className="fa fa-users" style={{fontSize:"30px", color: "#008000"}}></span>
+
+                </div>
+                  <h6 className="rv-8-function__title mb-3">
+                    <a href="/procedural-rules">{"COMMITTEES IN NJC"}</a>
                   </h6>
                   <span className="rv-8-function__sub-title">
                      <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i>  Interview of Nominees for Appointment as Judicial Officers of Superior Courts of Record.</li>
                   <li><i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i>  Review of The 1999 Constitution.</li>
-                  </span>
+                </span>
+                <div className="text-center mt-3">
+                 <a href="/committees-of-njc" className="btn btn-flat" style={{color:"#008000"}}>Read more  <span className="fa-regular fa-arrow-up-right"></span></a>
+
+                </div>
                 </div>
               </SwiperSlide>  <SwiperSlide className="rv-8-function" >
                 {/* <img src={item.img} alt="icon" className="rv-8-function__img" /> */}
-                <div className="rv-8-function__txt">
-                  <h6 className="rv-8-function__title">
+              <div className="rv-8-function__txt">
+                   <div className=" mb-3">
+                <span className="fa fa-book" style={{fontSize:"30px", color: "#008000"}}></span>
+
+                </div>
+                  <h6 className="rv-8-function__title mb-3">
                     <a href="#">{"APPOINTMENT RULES"}</a>
                   </h6>
                 <span className="rv-8-function__sub-title">
                   <li>
                     <i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> 
-                    {"Extant revised NJC Guidelines and Procedural rules for the appointment of Judicial Officers of all superior courts of record in Nigeria are as follows:"}
+                    {" Extant revised NJC Guidelines and Procedural rules for the appointment of Judicial Officers of all superior courts of record in Nigeria are as follows:"}
 
                   </li>
-                  </span>
+                </span>
+                 <div className="text-center mt-3">
+                 <a href="/procedural-rules" className="btn btn-flat" style={{color:"#008000"}}>Read more  <span className="fa-regular fa-arrow-up-right"></span></a>
+
+                </div>
                 </div>
               </SwiperSlide>  <SwiperSlide className="rv-8-function" >
                 {/* <img src={item.img} alt="icon" className="rv-8-function__img" /> */}
-                <div className="rv-8-function__txt">
-                  <h6 className="rv-8-function__title">
+              <div className="rv-8-function__txt">
+                   <div className=" mb-3">
+                <span className="fa fa-gavel" style={{fontSize:"30px", color: "#008000"}}></span>
+
+                </div>
+                  <h6 className="rv-8-function__title mb-3">
                     <a href="#">{"NATIONAL JUDICIAL POLICY"}</a>
                   </h6>
                 <span className="rv-8-function__sub-title">
                     <i className="fa fa-certificate" aria-hidden="true" style={{color:"#008000"}}></i> 
                   
-                    {"The National Judicial Council is a body established under section 153(1) of the Constitution with power relating to appointments and exercise of displinary.."}
-                  </span>
+                    {" The National Judicial Council is a body established under section 153(1) of the Constitution with power relating to appointments and exercise of displinary.."}
+                </span>
+                 <div className="text-center mt-3">
+                 <a href="/national-judicial-policy" className="btn btn-flat" style={{color:"#008000"}}>Read more  <span className="fa-regular fa-arrow-up-right"></span></a>
+
+                </div>
                 </div>
               </SwiperSlide>
            

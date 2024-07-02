@@ -4,7 +4,7 @@ import DivAnimateYAxis from "../utils/DivAnimateYAxis";
 
 const ContactSection4 = ({}) => {
   return (
-    <section className="rv-18-contact_main_section">
+    <section className="rv-18-contact_main_section " style={{marginTop:"60px"}}>
       <div className="container">
         <DivAnimateYAxis visible className="rv-18-contact_info">
           <div className="row">

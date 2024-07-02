@@ -9,7 +9,7 @@ import ServiceSection5 from "@/webComponents/service/ServiceSection5";
 import FunctionSection from "@/components/function/FunctionSection";
 import PricingSection4 from "@/components/pricing/PricingSection4";
 import TestimonialSection5 from "@/webComponents/testimonial/TestimonialSection5";
-import TeamSection6 from "@/webComponents/team/TeamSection6";
+import TeamSection5 from "@/webComponents/team/TeamSection5";
 import TeamSection7 from "@/webComponents/team/TeamSection7";
 
 import CompareSection from "@/components/compare/CompareSection";
@@ -52,6 +52,9 @@ const [chiefJudge, setChiefJudge] = useState<any>();
   const homePageData = async () => {
     try {
       const res = await endpoint.get("/home-content");
+      console.log('====================================');
+      console.log(res.data.data);
+      console.log('====================================');
       setdata(res.data.data);
       setMainSlider(res.data.data.mainSlider);
       setChiefJudge(res.data.data.chiarmanPicture);
@@ -60,27 +63,18 @@ const [chiefJudge, setChiefJudge] = useState<any>();
       setCouncilMember(res.data.data.getcouncilMember)
       setManagementStaffs(res.data.data.getManagementStaff)
       setSetNjcProfile(res.data.data.getNjcProfile)
+      setGallery(res.data.data.mediapix);
+      
+
 
     } catch (err) {
       console.log(err);
   };
   }
   
-  const getGalleryImages = async () => {
-    try {
-      const res = await endpoint.get("/gallery");
-      console.log('===============gallery=====================');
-      console.log(res.data.data.getGalleries);
-      console.log('====================================');
-      setGallery(res.data.data.getGalleries);
-    } catch (err) {
-      console.log(err);
-  };
-  }
 
   useEffect(() => {
     homePageData();
-    getGalleryImages();
   }, []);
   return (
     <main className="overflow-x-hidden car-wash-demo">
@@ -91,10 +85,10 @@ const [chiefJudge, setChiefJudge] = useState<any>();
       <ServiceSection5  mission={mission} vission={vision}  />
       <FunctionSection />
       
-      {/* <TeamSection6 data={ "Current Council Members"} councilMember={councilMember} />
-      <TeamSection6 data={ "Management Staffs"} councilMember={managementStaffs}  /> */}
-   <TeamSection7 data={ "Current Council Members"} councilMember={councilMember} />
-      <TeamSection7 data={ "Management Staffs"} councilMember={managementStaffs}  />
+      <TeamSection5   data={ "Current Council Members"} councilMember={councilMember}/>
+     <TeamSection5   data={ "Management Staffs"} councilMember={managementStaffs}/> 
+      {/* <TeamSection7 data={ "Current Council Members"} councilMember={councilMember} />
+      <TeamSection7 data={ "Management Staffs"} councilMember={managementStaffs}  /> */}
       <AboutSection5 mainSlider={ gallery}/>
 
 
