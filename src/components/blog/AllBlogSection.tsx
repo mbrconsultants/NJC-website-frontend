@@ -1,4 +1,4 @@
-import { blogData4 } from "@/data/Data";
+// import { blogData4 } from "@/data/Data";
 import Link from "next/link";
 import React from "react";
 import DivAnimateYAxis from "../utils/DivAnimateYAxis";
@@ -7,7 +7,7 @@ const AllBlogSection = () => {
   return (
     <section className="rv-inner-blogs rv-section-spacing">
       <div className="container">
-        <div className="rv-inner-blogs__row">
+        {/* <div className="rv-inner-blogs__row">
           {blogData4.map((item) => (
             <DivAnimateYAxis
               duration={1.2 + 0.1 * item.id}
@@ -44,7 +44,7 @@ const AllBlogSection = () => {
               </div>
             </DivAnimateYAxis>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
